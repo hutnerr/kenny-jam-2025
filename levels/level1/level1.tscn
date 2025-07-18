@@ -18,9 +18,12 @@ position = Vector2(484, 356)
 curve = SubResource("Curve2D_ps0pm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(640, 348)
+unique_name_in_owner = true
+position = Vector2(549.618, 347.587)
 rotation = -3.13703
+progress = 90.3842
+rotates = false
 
 [node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_c6lro")]
-rotation = 3.11192
-scale = Vector2(0.16, 0.16)
+rotation = 3.14159
+speed = 15
