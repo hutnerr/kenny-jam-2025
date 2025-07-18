@@ -21,9 +21,9 @@ func spawnEnemy():
 	paths = get_tree(). get_nodes_in_group("path")
 	var enemy = enemyScene.instantiate()
 	
-	var path = paths[0]
-	
-	path.add_child(enemy)
+	var path = paths[0] as Path2D
+
+
 
 func onTimerTimeout():
 	spawnEnemy()
