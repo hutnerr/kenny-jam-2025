@@ -22,6 +22,17 @@ window/size/viewport_height=360
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://dybb5ne40yyv4"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/_Godot-IDE_/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/_Godot-IDE_/plugins": "blue",
+"res://addons/_Godot-IDE_/shared_resources/": "teal"
+}
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

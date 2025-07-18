@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseEnemy
 
 @onready var path_follow : PathFollow2D = %PathFollow2D
 
