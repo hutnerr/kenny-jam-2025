@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c431epvf3f1yw"]
 
-[ext_resource type="Texture2D" uid="uid://bv1t4t0r5hf1k" path="res://icon.svg" id="1_11o15"]
+[ext_resource type="Texture2D" uid="uid://bnk5knlkp1b8t" path="res://sprites/Tiles/tile_0160.png" id="1_11o15"]
 
 [node name="Enemy" type="Node2D"]
 
