@@ -1,32 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://btgwpu1gguvvi"]
+[gd_scene load_steps=7 format=3 uid="uid://btgwpu1gguvvi"]
 
 [ext_resource type="PackedScene" uid="uid://b5jutp8tjd464" path="res://levels/level1/tile_map_layer.tscn" id="1_eq150"]
-[ext_resource type="PackedScene" uid="uid://c431epvf3f1yw" path="res://enemies/base-enemy/BaseEnemy.tscn" id="2_c6lro"]
+[ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
+[ext_resource type="Script" uid="uid://dppooyrvy7al8" path="res://levels/level1/enemy_spawner.gd" id="4_aatsp"]
 
-[sub_resource type="Curve2D" id="Curve2D_ps0pm"]
+[sub_resource type="Curve2D" id="Curve2D_sfwlx"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 757, 402, 0, 0, 0, 0, 577, 404, 0, 0, 0, 0, 532.577, 403.112, 0, 0, 0, 0, 508, 403, 0, 0, 0, 0, 471.205, 403.112, 0, 0, 0, 0, 441.608, 402.241, 0, 0, 0, 0, 412, 402, 0, 0, 0, 0, 394.165, 402.677, 0, 0, 0, 0, 337, 402)
+"points": PackedVector2Array(0, 0, 0, 0, -193, 0, 0, 0, 0, 0, -9, 1)
 }
-point_count = 9
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_tysf0"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 222, 1, 0, 0, 0, 0, 11, 0)
+}
+point_count = 2
 
 [node name="Level1" type="Node2D"]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(-40, -55)
 
-[node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-530, -402)
-curve = SubResource("Curve2D_ps0pm")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-unique_name_in_owner = true
-position = Vector2(666.621, 403.004)
-rotation = -3.13703
-progress = 90.3842
-rotates = false
-
-[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_c6lro")]
-rotation = 3.14159
+[node name="Core" parent="." instance=ExtResource("2_ps0pm")]
 
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
+
+[node name="EnemySpawner" type="Node" parent="."]
+script = ExtResource("4_aatsp")
+
+[node name="PathGroup" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="LeftPath" type="Path2D" parent="PathGroup"]
+curve = SubResource("Curve2D_sfwlx")
+
+[node name="LeftPathFollow2D" type="PathFollow2D" parent="PathGroup/LeftPath"]
+unique_name_in_owner = true
+position = Vector2(-193, 0)
+rotation = 0.00543473
+
+[node name="RightPath" type="Path2D" parent="PathGroup"]
+curve = SubResource("Curve2D_tysf0")
+
+[node name="RightPathFollow2D" type="PathFollow2D" parent="PathGroup/RightPath"]
+unique_name_in_owner = true
+position = Vector2(222, 1)
+rotation = -3.13685
