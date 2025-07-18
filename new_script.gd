@@ -1,4 +1,4 @@
 extends Node
 
 func _ready():
-    print('Hello')
+    print("I'm any text")
