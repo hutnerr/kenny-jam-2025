@@ -14,3 +14,7 @@ config/name="kenny-jam-2025"
 run/main_scene="uid://ffvvdf46tio1"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+mouse_cursor/custom_image="uid://dybb5ne40yyv4"
