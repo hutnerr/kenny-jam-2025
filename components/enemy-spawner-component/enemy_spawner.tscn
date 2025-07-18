@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://5d8gvyneduo6"]
+
+[ext_resource type="Script" uid="uid://dppooyrvy7al8" path="res://levels/level1/enemy_spawner.gd" id="1_fgvrh"]
+[ext_resource type="PackedScene" uid="uid://d2wu76twul5fm" path="res://enemies/base-enemy/BaseEnemy.tscn" id="2_ms5uj"]
+
+[node name="EnemySpawner" type="Node"]
+script = ExtResource("1_fgvrh")
+enemyScene = ExtResource("2_ms5uj")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.51
+autostart = true

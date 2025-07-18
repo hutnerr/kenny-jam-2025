@@ -1,18 +1,31 @@
 extends Node
 
 var paths = null
+@export var enemyScene: PackedScene
+@onready var timer = $Timer
+@onready var leftPath = %LeftPathFollow2D
+@onready var rightPath = %RightPathFollow2D
 
 func _ready() -> void:
-	var leftpath = %LeftPathFollow2D
-	var rightpath = %RightPathFollow2D
-	paths = [
-		leftpath, rightpath
-	]
+	paths = get_tree().get_nodes_in_group("path")
+	print(paths)
+	timer.timeout.connect(onTimerTimeout)	
+	#var enemy = enemyScene.instantiate()
+	#leftPath.add_child(enemy)
+
 
 func _process(_delta: float) -> void:
-	if paths:
-		for path in paths:
-			var enemy : BaseEnemy = EnemyFactory.createLackey()
-			path.add_child(enemy)
-	else:
-		print("Paths null")
+	pass
+
+func spawnEnemy():
+	paths = get_tree(). get_nodes_in_group("path")
+	var enemy = enemyScene.instantiate()
+	
+	var path = paths[0]
+	
+	path.add_child(enemy)
+
+func onTimerTimeout():
+	spawnEnemy()
+	
+	

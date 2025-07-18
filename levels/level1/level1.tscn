@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b5jutp8tjd464" path="res://levels/level1/tile_map_layer.tscn" id="1_eq150"]
 [ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
-[ext_resource type="Script" uid="uid://dppooyrvy7al8" path="res://levels/level1/enemy_spawner.gd" id="4_aatsp"]
+[ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://components/enemy-spawner-component/enemy_spawner.tscn" id="4_aatsp"]
 
 [sub_resource type="Curve2D" id="Curve2D_sfwlx"]
 _data = {
@@ -26,13 +26,12 @@ position = Vector2(-40, -55)
 
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
 
-[node name="EnemySpawner" type="Node" parent="."]
-script = ExtResource("4_aatsp")
+[node name="EnemySpawner" parent="." instance=ExtResource("4_aatsp")]
 
 [node name="PathGroup" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="LeftPath" type="Path2D" parent="PathGroup"]
+[node name="LeftPath" type="Path2D" parent="PathGroup" groups=["path"]]
 curve = SubResource("Curve2D_sfwlx")
 
 [node name="LeftPathFollow2D" type="PathFollow2D" parent="PathGroup/LeftPath"]
@@ -40,7 +39,7 @@ unique_name_in_owner = true
 position = Vector2(-193, 0)
 rotation = 0.00543473
 
-[node name="RightPath" type="Path2D" parent="PathGroup"]
+[node name="RightPath" type="Path2D" parent="PathGroup" groups=["path"]]
 curve = SubResource("Curve2D_tysf0")
 
 [node name="RightPathFollow2D" type="PathFollow2D" parent="PathGroup/RightPath"]
