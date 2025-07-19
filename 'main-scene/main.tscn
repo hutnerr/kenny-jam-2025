@@ -42,3 +42,5 @@ energyManager = NodePath("../EnergyManager")
 enemySpawner = NodePath("../EnemySpawner")
 
 [node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]
+
+[node name="BuildingContainer" type="Node" parent="." groups=["building_container"]]

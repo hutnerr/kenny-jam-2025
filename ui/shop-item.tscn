@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c2c2abf7vi44f"]
 
 [ext_resource type="Script" uid="uid://5bfpenhv5uy" path="res://ui/shop_item.gd" id="1_1xdcd"]
-[ext_resource type="PackedScene" uid="uid://0hx15yptjgcn" path="res://objects/buildings/basic-building/basic_building.tscn" id="2_5jcd8"]
+[ext_resource type="PackedScene" uid="uid://dbenponi4fear" path="res://objects/buildings/gunner-building/basic_building.tscn" id="2_5jcd8"]
 [ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="2_kdret"]
 
 [node name="Shop-item" type="Control"]

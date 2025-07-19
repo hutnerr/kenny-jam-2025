@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bb036tc8cifp7"]
+
+[ext_resource type="Script" uid="uid://b36fcvmbqw4vp" path="res://objects/bullet/bullet.gd" id="1_ra7b6"]
+[ext_resource type="Shader" uid="uid://cxlv5v3ghc6lm" path="res://objects/buildings/laser-building/laser/laser.gdshader" id="2_0yc0n"]
+[ext_resource type="Script" uid="uid://biwpbbancuu7i" path="res://components/hitbox-component/hitbox_component.gd" id="3_0yc0n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_haocd"]
+shader = ExtResource("2_0yc0n")
+shader_parameter/beam_width = 2.0
+shader_parameter/core_color = Vector4(1, 0.2, 0.2, 1)
+shader_parameter/outer_color = Vector4(1, 0.8, 0.8, 0.3)
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_intensity = 0.4
+shader_parameter/flicker_speed = 3.0
+shader_parameter/flicker_amount = 0.1
+shader_parameter/edge_softness = 0.1
+
+[sub_resource type="Gradient" id="Gradient_w0xuq"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0yc0n"]
+gradient = SubResource("Gradient_w0xuq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_haocd"]
+size = Vector2(63, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra7b6"]
+size = Vector2(29, 2)
+
+[node name="PlayerProjectile" type="CharacterBody2D"]
+script = ExtResource("1_ra7b6")
+projectile_speed = 1
+projectile_travel_time = 1
+isPiercing = true
+metadata/_custom_type_script = "uid://b36fcvmbqw4vp"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_haocd")
+position = Vector2(33.6329, 0)
+scale = Vector2(1.04272, 0.15625)
+texture = SubResource("GradientTexture2D_0yc0n")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("3_0yc0n")
+metadata/_custom_type_script = "uid://biwpbbancuu7i"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(31.5, -2.14186e-06)
+shape = SubResource("RectangleShape2D_haocd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.5, 0)
+shape = SubResource("RectangleShape2D_ra7b6")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

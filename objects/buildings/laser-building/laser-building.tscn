@@ -1,9 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnwfx81rnk76y"]
+[gd_scene load_steps=11 format=3 uid="uid://da17ee1bfgyhc"]
 
 [ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_eq5n4"]
 [ext_resource type="Texture2D" uid="uid://c78onvw6ormws" path="res://sprites/Tiles/tile_0050.png" id="2_xrpun"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="3_mlv00"]
-[ext_resource type="PackedScene" uid="uid://prohaeqm0ik6" path="res://objects/laser/laser.tscn" id="4_eq5n4"]
+[ext_resource type="PackedScene" uid="uid://bb036tc8cifp7" path="res://objects/buildings/laser-building/laser/laser.tscn" id="4_icl50"]
 [ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="5_a8gkl"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="6_yw02i"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="7_tjpe4"]
@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="9_vd2hv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
-radius = 112.0
+radius = 67.0298
 
 [node name="LaserBuilding" type="Node2D"]
 script = ExtResource("1_eq5n4")
@@ -26,7 +26,7 @@ texture = ExtResource("2_xrpun")
 
 [node name="Gun" parent="." instance=ExtResource("3_mlv00")]
 fire_rate = 1.0
-projectile = ExtResource("4_eq5n4")
+projectile = ExtResource("4_icl50")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_a8gkl")]
 max_health = 10000.0

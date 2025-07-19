@@ -1,4 +1,5 @@
 extends Node2D
+class_name BaseBuilding
 
 @onready var stateMachine: StateMachine = $StateMachine
 @onready var energy: HealthComponent = $HealthComponent

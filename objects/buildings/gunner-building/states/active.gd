@@ -35,5 +35,5 @@ func aim():
 	var direction = enemyToShoot.global_position - parent.global_position
 	var angleRadians = direction.angle()
 	
-	parent.gun.shoot(angleRadians)
+	parent.gun.shoot(angleRadians, direction)
 	

@@ -20,14 +20,14 @@ func _ready() -> void:
 	timer.timeout.connect(on_timer_timeout)
 
 
-func shoot(direction) -> void:
+func shoot(direction, pointAt) -> void:
 	if current_state == Launcher.LOADED:
 		
 		current_state = Launcher.CHAMBERING
 		timer.start()
-		place_projectile(direction)
+		place_projectile(direction, pointAt)
 
-func place_projectile(direction) -> void:
+func place_projectile(direction, pointAt) -> void:
 	if !projectile:
 		return
 	var projectile_instance = projectile.instantiate() as PlayerProjectile
@@ -38,5 +38,6 @@ func place_projectile(direction) -> void:
 	projectile_instance.hitbox_component.damage = damage
 	projectile_instance.global_position = global_position
 	projectile_instance.direction = direction
+	projectile_instance.pointAt = pointAt
 func on_timer_timeout():
 	current_state = Launcher.LOADED

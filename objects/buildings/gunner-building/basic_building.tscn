@@ -11,9 +11,9 @@
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="7_iwlsv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
-radius = 112.0
+radius = 112.361
 
-[node name="GunnerBuilding" type="Node2D"]
+[node name="BaseBuilding" type="Node2D"]
 script = ExtResource("1_m85gk")
 
 [node name="AttackRange" type="Area2D" parent="."]

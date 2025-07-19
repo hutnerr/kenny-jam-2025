@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://slvj264h1ry5"]
+[gd_scene load_steps=6 format=3 uid="uid://slvj264h1ry5"]
 
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_foe6g"]
 [ext_resource type="PackedScene" uid="uid://c2c2abf7vi44f" path="res://ui/shop-item.tscn" id="2_2v8nf"]
@@ -15,6 +15,9 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="Resource" id="Resource_2v8nf"]
+metadata/__load_path__ = "res://objects/buildings/basic-building/basic_building.tscn"
 
 [node name="Shop" type="CanvasLayer"]
 
@@ -42,3 +45,4 @@ offset_left = 557.0
 offset_top = 13.0
 offset_right = -20.0
 offset_bottom = -283.0
+building = SubResource("Resource_2v8nf")
