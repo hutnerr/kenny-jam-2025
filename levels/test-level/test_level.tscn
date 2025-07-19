@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh0ody55bucjl"]
+
+[ext_resource type="PackedScene" uid="uid://0hx15yptjgcn" path="res://objects/buildings/basic-building/basic_building.tscn" id="1_7d8a7"]
+[ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/buildings/bullet/bullet.tscn" id="2_yofdy"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="BasicBuilding" parent="." instance=ExtResource("1_7d8a7")]
+position = Vector2(67, 165)
+
+[node name="Bullet" parent="." instance=ExtResource("2_yofdy")]
+position = Vector2(78, 163)
