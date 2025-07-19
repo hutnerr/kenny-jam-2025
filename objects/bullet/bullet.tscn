@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://dwmaw0ua5u328"]
 
-[ext_resource type="Script" uid="uid://b36fcvmbqw4vp" path="res://objects/buildings/bullet/bullet.gd" id="1_wowjw"]
+[ext_resource type="Script" uid="uid://b36fcvmbqw4vp" path="res://objects/bullet/bullet.gd" id="1_wowjw"]
 [ext_resource type="Texture2D" uid="uid://dgdaf31a6gptt" path="res://sprites/Tiles/tile_0191.png" id="2_pf7r1"]
 [ext_resource type="PackedScene" uid="uid://bjmtgnt40wbwx" path="res://components/hitbox-component/hitbox_component.tscn" id="3_bs368"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yp3e1"]
-radius = 8.0
+radius = 6.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ovapr"]
 radius = 4.0
@@ -27,6 +27,7 @@ collision_mask = 4
 shape = SubResource("CircleShape2D_yp3e1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_ovapr")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,14 +1,14 @@
 [gd_scene load_steps=11 format=3 uid="uid://dbenponi4fear"]
 
-[ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="1_3bcbl"]
-[ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/basic-building/basic_building.gd" id="1_m85gk"]
+[ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_m85gk"]
+[ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="2_ik3pl"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="2_ynnmv"]
 [ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="3_tlfoa"]
-[ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/buildings/bullet/bullet.tscn" id="3_tmyfj"]
+[ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/bullet/bullet.tscn" id="4_hiqd6"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="4_ynnmv"]
-[ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/basic-building/menu.gd" id="5_tmyfj"]
-[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/basic-building/state.gd" id="6_c67i3"]
-[ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/basic-building/active.gd" id="7_iwlsv"]
+[ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="5_tmyfj"]
+[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/state.gd" id="6_c67i3"]
+[ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="7_iwlsv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
 radius = 112.0
@@ -21,12 +21,12 @@ script = ExtResource("1_m85gk")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_ynnmv")
 
+[node name="Sprite2D" type="Sprite2D" parent="AttackRange"]
+texture = ExtResource("2_ik3pl")
+
 [node name="Gun" parent="." instance=ExtResource("2_ynnmv")]
 fire_rate = 1.0
-projectile = ExtResource("3_tmyfj")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_3bcbl")
+projectile = ExtResource("4_hiqd6")
 
 [node name="HealthComponent" parent="." instance=ExtResource("3_tlfoa")]
 max_health = 10000.0

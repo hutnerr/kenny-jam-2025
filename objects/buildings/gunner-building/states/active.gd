@@ -9,7 +9,6 @@ func enter():
 func update(_delta):
 	super(_delta)
 	parent.energy.damage(parent.activeEnergyConsumption)
-
 	aim()
 
 func enemiesInRange():

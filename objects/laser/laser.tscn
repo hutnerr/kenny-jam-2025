@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://prohaeqm0ik6"]
+
+[ext_resource type="Script" uid="uid://c6mbh66buloxa" path="res://objects/laser/laser.gd" id="1_5e7d0"]
+[ext_resource type="PackedScene" uid="uid://bjmtgnt40wbwx" path="res://components/hitbox-component/hitbox_component.tscn" id="2_ejt2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfo75"]
+size = Vector2(144, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8f502"]
+size = Vector2(145.5, 26)
+
+[node name="Laser" type="CharacterBody2D"]
+script = ExtResource("1_5e7d0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(72, 0)
+shape = SubResource("RectangleShape2D_xfo75")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("2_ejt2u")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(73.25, 0)
+shape = SubResource("RectangleShape2D_8f502")

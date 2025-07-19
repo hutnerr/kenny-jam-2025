@@ -7,7 +7,6 @@ extends Node2D
 
 
 @export var fireRate: float = 1.0
-@export var bullet: CharacterBody2D
 @export var idleEnergyConsumption: int = 10
 @export var activeEnergyConsumption: int = 40
 
