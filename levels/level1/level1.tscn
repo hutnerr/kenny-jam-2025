@@ -26,14 +26,14 @@ tile_set = ExtResource("2_aatsp")
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
 
 [node name="BasicBuilding" parent="." instance=ExtResource("5_sfwlx")]
-position = Vector2(158, -2)
+position = Vector2(220, 68)
 rotation = -0.0106169
 
 [node name="BaseBuilding" parent="." instance=ExtResource("5_sfwlx")]
-position = Vector2(-210, -45)
+position = Vector2(-156, 58)
 
 [node name="LaserBuilding" parent="." instance=ExtResource("6_tysf0")]
-position = Vector2(-19, 20)
+position = Vector2(-99, 37)
 
 [node name="PlayerProjectile" parent="." instance=ExtResource("7_3jy00")]
 position = Vector2(-7, -20)
