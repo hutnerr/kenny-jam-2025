@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ffvvdf46tio1"]
+
+[ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://manager/enemy-spawn-manager/enemy-spawn-manager.tscn" id="1_inkwu"]
+[ext_resource type="PackedScene" uid="uid://dwsl3dximeosw" path="res://manager/game-state-manager/game_state_manager.tscn" id="2_pd65j"]
+[ext_resource type="PackedScene" uid="uid://dyvkrs0v1ayw7" path="res://manager/wave-manager/wave_manager.tscn" id="3_lap8g"]
+
+[node name="Main" type="Node2D"]
+
+[node name="EnemySpawner" parent="." instance=ExtResource("1_inkwu")]
+
+[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager") instance=ExtResource("2_pd65j")]
+waveManager = NodePath("../WaveManager")
+
+[node name="WaveManager" parent="." node_paths=PackedStringArray("enemySpawner") instance=ExtResource("3_lap8g")]
+enemySpawner = NodePath("../EnemySpawner")

@@ -1,29 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://btgwpu1gguvvi"]
+[gd_scene load_steps=4 format=3 uid="uid://btgwpu1gguvvi"]
 
-[ext_resource type="PackedScene" uid="uid://b5jutp8tjd464" path="res://levels/level1/tile_map_layer.tscn" id="1_eq150"]
+[ext_resource type="PackedScene" uid="uid://b5jutp8tjd464" path="res://resources/tile_map_layer.tscn" id="1_eq150"]
 [ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
-[ext_resource type="PackedScene" uid="uid://dyvkrs0v1ayw7" path="res://components/wave-manager/wave_manager.tscn" id="2_sfwlx"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
-[ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://components/enemy-spawner-component/enemy_spawner.tscn" id="4_aatsp"]
-[ext_resource type="Script" uid="uid://cjliu4ag63r12" path="res://levels/level1/waves.gd" id="5_sfwlx"]
-[ext_resource type="PackedScene" uid="uid://luyb551j8tnn" path="res://levels/level1/paths/left_path_2d.tscn" id="7_8yb7b"]
-[ext_resource type="PackedScene" uid="uid://c57nhwrbx2814" path="res://levels/level1/paths/right_path_2d.tscn" id="8_gw1fo"]
 
 [node name="Level1" type="Node2D"]
 
 [node name="TileMapLayer" parent="." instance=ExtResource("1_eq150")]
 position = Vector2(-40, -55)
 
-[node name="WaveManager" parent="." instance=ExtResource("2_sfwlx")]
-waveScript = ExtResource("5_sfwlx")
-
-[node name="EnemySpawner" parent="." instance=ExtResource("4_aatsp")]
-unique_name_in_owner = true
-
 [node name="Core" parent="." instance=ExtResource("2_ps0pm")]
 
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
-
-[node name="LeftPath2D" parent="." instance=ExtResource("7_8yb7b")]
-
-[node name="RightPath2D" parent="." instance=ExtResource("8_gw1fo")]

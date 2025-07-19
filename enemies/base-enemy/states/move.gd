@@ -1,8 +1,14 @@
 extends State
 	
 
+func enter():
+	super()
+	
+
 func update(delta):
-	var followpath: PathFollow2D = get_parent()
+	parent.healthComponent.damage(1)
+	
+	var followpath: PathFollow2D = get_parent().get_parent().get_parent()
 	if not followpath:
 		print("sad :(")
 		return

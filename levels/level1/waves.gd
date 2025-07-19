@@ -1,8 +1,8 @@
-extends Node
+extends RefCounted
 
 var waves
 
-const SOLDIER = "res://enemies/soldier/solider.tscn"
+const SOLDIER = "res://enemies/base-enemy/BaseEnemy.tscn"
 
 func _init() -> void:
 	self.waves = {

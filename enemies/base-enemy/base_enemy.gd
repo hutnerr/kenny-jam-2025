@@ -19,7 +19,3 @@ func _ready() -> void:
 
 func onDeath():
 	stateMachine.change_state(stateMachine.current_state, "dead")
-
-	
-	
-	
