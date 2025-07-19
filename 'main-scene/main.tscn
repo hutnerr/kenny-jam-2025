@@ -44,10 +44,7 @@ enemySpawner = NodePath("../EnemySpawner")
 
 [node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]
 
-<<<<<<< HEAD
 [node name="BuildingContainer" type="Node" parent="." groups=["building_container"]]
-=======
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_53317")
 autoplay = true
->>>>>>> dccfa685a2dcc0054e2327884dd7e52e8c62914e

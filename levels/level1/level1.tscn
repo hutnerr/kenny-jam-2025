@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dbenponi4fear" path="res://objects/buildings/gunner-building/basic_building.tscn" id="5_sfwlx"]
-[ext_resource type="PackedScene" uid="uid://da17ee1bfgyhc" path="res://objects/buildings/laser-building/laser-building.tscn" id="6_tysf0"]
+[ext_resource type="PackedScene" uid="uid://bnwfx81rnk76y" path="res://objects/buildings/laser-building/laser-building.tscn" id="6_tysf0"]
 [ext_resource type="PackedScene" uid="uid://bb036tc8cifp7" path="res://objects/buildings/laser-building/laser/laser.tscn" id="7_3jy00"]
 
 [node name="Level1" type="Node2D"]
