@@ -1,31 +1,18 @@
 extends Node
 
-@export var waveScript: Script
-@export var enemyScene: PackedScene
+@onready var paths = [
+	preload("res://levels/level1/paths/left_path_2d.tscn"),
+	preload("res://levels/level1/paths/right_path_2d.tscn")
+]
 
-@onready var timer = $Timer
-
-var paths = null
-var waves = null
-
-func _ready() -> void:
-	timer.timeout.connect(onTimerTimeout)
-	self.waves = waveScript.new().waves # init the waves
-
-func _process(_delta: float) -> void:
-	pass
-
-func spawnEnemy():
-	paths = get_tree().get_nodes_in_group("path")
+func spawnEnemy(enemy: PackedScene):
 	for path in paths:
-		var followpath : PathFollow2D = path.get_child(0)
-		var wave = 3
-		for enemyPath in waves[wave]: # wave 1 for now
-			var num = waves[wave][enemyPath]
-			for i in range(num):
-				var enemyWaveScene = load(enemyPath)
-				var enemy = enemyWaveScene.instantiate()
-				followpath.add_child(enemy)
-
-func onTimerTimeout():
-	spawnEnemy()
+		# create a new path for each enemy to go along
+		# make the path, get its follow path, add the enemy to it, then add the path to the scene itself
+		var tempPath = path.instantiate()
+		var tempPath2DFollow = tempPath.get_child(0)
+		if not tempPath2DFollow:
+			return
+		var tempEnemy = enemy.instantiate()
+		tempPath2DFollow.add_child(tempEnemy)
+		add_child(tempPath)
