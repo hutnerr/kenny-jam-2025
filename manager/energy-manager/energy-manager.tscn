@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://be53i0nrnk7ms"]
+
+[ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="1_o5txe"]
+
+[node name="EnergyManager" type="Node"]
+
+[node name="HealthComponent" parent="." instance=ExtResource("1_o5txe")]

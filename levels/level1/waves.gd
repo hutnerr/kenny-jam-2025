@@ -7,12 +7,12 @@ const SOLDIER = "res://enemies/base-enemy/BaseEnemy.tscn"
 func _init() -> void:
 	self.waves = {
 		1 : {
-			SOLDIER : 1
+			SOLDIER : 4
 		},
 		2 : {
-			SOLDIER : 3,
+			SOLDIER : 8,
 		},
 		3 : {
-			SOLDIER : 5
+			SOLDIER : 12
 		},
 	}

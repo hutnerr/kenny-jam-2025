@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bnk5knlkp1b8t" path="res://sprites/Tiles/tile_0160.png" id="1_11o15"]
 [ext_resource type="Script" uid="uid://cdpwmwbp36qjh" path="res://enemies/base-enemy/base_enemy.gd" id="1_v76dx"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="2_dlnc5"]
-[ext_resource type="Script" uid="uid://crf4dw8r3umi4" path="res://components/health-component/health_component.gd" id="2_v76dx"]
+[ext_resource type="Script" path="res://components/health-component/health_component.gd" id="2_v76dx"]
 [ext_resource type="Script" uid="uid://clxib5robgqst" path="res://enemies/base-enemy/states/move.gd" id="3_xjoap"]
 [ext_resource type="Script" uid="uid://cspm7widr8ffr" path="res://enemies/base-enemy/states/attack.gd" id="5_dlnc5"]
 [ext_resource type="PackedScene" uid="uid://bjmtgnt40wbwx" path="res://components/hitbox-component/hitbox_component.tscn" id="6_nkqlf"]
@@ -17,11 +17,13 @@ radius = 4.0
 radius = 8.0
 
 [node name="Enemy" type="Node2D"]
+light_mask = 4
+visibility_layer = 2
 script = ExtResource("1_v76dx")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_v76dx")
-max_health = 250.0
+max_health = 2.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_dlnc5")]
 initial_state = NodePath("Move")
@@ -32,6 +34,8 @@ script = ExtResource("3_xjoap")
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("5_dlnc5")
 
+[node name="Timer" type="Timer" parent="StateMachine/Attack"]
+
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource("6_xjoap")
 
@@ -39,11 +43,15 @@ script = ExtResource("6_xjoap")
 texture = ExtResource("1_11o15")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("6_nkqlf")]
+collision_layer = 5
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 shape = SubResource("CircleShape2D_wbn6f")
 
 [node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("7_fkh1d")]
+collision_layer = 5
+collision_mask = 2
 health_component = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
