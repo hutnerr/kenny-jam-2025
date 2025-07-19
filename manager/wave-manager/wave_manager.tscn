@@ -4,3 +4,4 @@
 
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_e5wl4")
+numOfPaths = 2

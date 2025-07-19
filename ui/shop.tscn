@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://slvj264h1ry5"]
+
+[ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_foe6g"]
+
+[node name="Shop" type="CanvasLayer"]
+
+[node name="PlayButton" type="Button" parent="."]
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 94.0
+offset_bottom = 41.0
+theme_override_fonts/font = ExtResource("1_foe6g")
+text = "START"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -85.0
+grow_horizontal = 0
+grow_vertical = 2
+color = Color(0.980392, 0.741176, 0.184314, 1)

@@ -8,12 +8,14 @@ class_name WaveManager
 
 var waves = null
 var currentWave = 0
-var enemyFuckinNameItYouGotIt = 0
+var finalWave = 0
+var enemyCount = 0
 var enemiesSlain = 0
 
 signal waveStarted
 signal spawningEnded
 signal waveEnded
+signal gameWon
 
 func sum(numList: Array) -> int:
 	var total = 0
@@ -26,18 +28,19 @@ func _ready() -> void:
 
 func onEnemyKilled():
 	enemiesSlain += 1
-	if enemiesSlain == enemyFuckinNameItYouGotIt:
+	if enemiesSlain == enemyCount: # finished a wave
 		enemiesSlain = 0
-		waveEnded.emit()
-
-func onLevelLoaded():
-	waves = waveScript.new().waves
+		if currentWave == finalWave: # we won
+			currentWave = 0
+			gameWon.emit()
+		else:	
+			waveEnded.emit()
 
 # since waves are a dict, they may be little dif each time
 func beginWave():
 	waveStarted.emit()
 	var wave = self.waves[currentWave]
-	enemyFuckinNameItYouGotIt = sum(wave.values()) * numOfPaths
+	enemyCount = sum(wave.values()) * numOfPaths
 	for enemyPath in wave:
 		var enemy = load(enemyPath)
 		for i in range(wave[enemyPath]):

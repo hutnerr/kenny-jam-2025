@@ -1,15 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://ffvvdf46tio1"]
+[gd_scene load_steps=9 format=3 uid="uid://ffvvdf46tio1"]
 
 [ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://manager/enemy-spawn-manager/enemy-spawn-manager.tscn" id="1_inkwu"]
+[ext_resource type="Script" uid="uid://cc0o4eb2ka7e4" path="res://'main-scene/main.gd" id="1_lap8g"]
+[ext_resource type="PackedScene" uid="uid://d4ks2b3wmwx8r" path="res://ui/main-menu.tscn" id="1_pd65j"]
 [ext_resource type="PackedScene" uid="uid://dwsl3dximeosw" path="res://manager/game-state-manager/game_state_manager.tscn" id="2_pd65j"]
 [ext_resource type="PackedScene" uid="uid://dyvkrs0v1ayw7" path="res://manager/wave-manager/wave_manager.tscn" id="3_lap8g"]
+[ext_resource type="PackedScene" uid="uid://slvj264h1ry5" path="res://ui/shop.tscn" id="3_r3rpl"]
+[ext_resource type="PackedScene" uid="uid://dc8sraoccdlqj" path="res://ui/win.tscn" id="4_qk7l1"]
+[ext_resource type="PackedScene" uid="uid://h4vxpp7ujwvn" path="res://ui/lose.tscn" id="5_4teyh"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_lap8g")
+
+[node name="GUI" type="Node" parent="."]
+
+[node name="MainMenu" parent="GUI" instance=ExtResource("1_pd65j")]
+
+[node name="Shop" parent="GUI" instance=ExtResource("3_r3rpl")]
+visible = false
+
+[node name="WinMenu" parent="GUI" instance=ExtResource("4_qk7l1")]
+visible = false
+
+[node name="Lose" parent="GUI" instance=ExtResource("5_4teyh")]
+visible = false
+
+[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen") instance=ExtResource("2_pd65j")]
+waveManager = NodePath("../WaveManager")
+mainMenu = NodePath("../GUI/MainMenu")
+shopMenu = NodePath("../GUI/Shop")
+loseScreen = NodePath("../GUI/Lose")
+winScreen = NodePath("../GUI/WinMenu")
+
+[node name="LevelContainer" type="Node" parent="."]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("1_inkwu")]
-
-[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager") instance=ExtResource("2_pd65j")]
-waveManager = NodePath("../WaveManager")
 
 [node name="WaveManager" parent="." node_paths=PackedStringArray("enemySpawner") instance=ExtResource("3_lap8g")]
 enemySpawner = NodePath("../EnemySpawner")

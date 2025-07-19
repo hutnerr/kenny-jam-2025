@@ -1,27 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwsl3dximeosw"]
+[gd_scene load_steps=8 format=3 uid="uid://dwsl3dximeosw"]
 
 [ext_resource type="Script" uid="uid://dtbn4vjr5cifb" path="res://manager/game-state-manager/game_state_manager.gd" id="1_0kd1l"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="1_wvfeu"]
 [ext_resource type="Script" uid="uid://bwdyn88uy56yq" path="res://manager/game-state-manager/shop.gd" id="3_u7kl4"]
 [ext_resource type="Script" uid="uid://c4fjftutpxgfe" path="res://manager/game-state-manager/combat.gd" id="4_u2ckf"]
+[ext_resource type="Script" uid="uid://clenc4i6e2dqv" path="res://manager/game-state-manager/main_menu.gd" id="5_u2ckf"]
+[ext_resource type="Script" uid="uid://bnml7qdmmpk4g" path="res://manager/game-state-manager/win.gd" id="6_osghx"]
+[ext_resource type="Script" uid="uid://dqjley407rf63" path="res://manager/game-state-manager/lose.gd" id="7_1uquq"]
 
 [node name="GameStateManager" type="Node2D"]
 script = ExtResource("1_0kd1l")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("1_wvfeu")
-initial_state = NodePath("Shop")
+initial_state = NodePath("MainMenu")
 metadata/_custom_type_script = "uid://1sg4yj5iuxdd"
 
 [node name="Shop" type="Node" parent="StateMachine"]
 script = ExtResource("3_u7kl4")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 
-[node name="Timer" type="Timer" parent="StateMachine/Shop"]
-wait_time = 0.555
-one_shot = true
-autostart = true
-
 [node name="Combat" type="Node" parent="StateMachine"]
 script = ExtResource("4_u2ckf")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="MainMenu" type="Node" parent="StateMachine"]
+script = ExtResource("5_u2ckf")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Win" type="Node" parent="StateMachine"]
+script = ExtResource("6_osghx")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Lose" type="Node" parent="StateMachine"]
+script = ExtResource("7_1uquq")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"

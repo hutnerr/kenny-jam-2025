@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bnk5knlkp1b8t" path="res://sprites/Tiles/tile_0160.png" id="1_11o15"]
 [ext_resource type="Script" uid="uid://cdpwmwbp36qjh" path="res://enemies/base-enemy/base_enemy.gd" id="1_v76dx"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="2_dlnc5"]
-[ext_resource type="Script" path="res://components/health-component/health_component.gd" id="2_v76dx"]
+[ext_resource type="Script" uid="uid://crf4dw8r3umi4" path="res://components/health-component/health_component.gd" id="2_v76dx"]
 [ext_resource type="Script" uid="uid://clxib5robgqst" path="res://enemies/base-enemy/states/move.gd" id="3_xjoap"]
 [ext_resource type="Script" uid="uid://cspm7widr8ffr" path="res://enemies/base-enemy/states/attack.gd" id="5_dlnc5"]
 [ext_resource type="PackedScene" uid="uid://bjmtgnt40wbwx" path="res://components/hitbox-component/hitbox_component.tscn" id="6_nkqlf"]
@@ -21,7 +21,7 @@ script = ExtResource("1_v76dx")
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_v76dx")
-max_health = 150.0
+max_health = 250.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_dlnc5")]
 initial_state = NodePath("Move")

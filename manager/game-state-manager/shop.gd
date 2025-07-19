@@ -1,17 +1,12 @@
 extends State
 
-
-@onready var tempTimer: Timer = $Timer
-
-
-
 #Wait for some sort of button to be pressed by the player before continuing
 func enter():
 	super()
+	parent.shopMenu.visible = true
 	print("In my flow state")
-	tempTimer.timeout.connect(onTimerTimeout)
 
+func exit():
+	super()
+	parent.shopMenu.visible = false
 	
-func onTimerTimeout():
-	print("THE TIMER WENT OFF HEEHEEHEE")
-	transitioned.emit(self, "combat")

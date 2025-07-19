@@ -1,0 +1,68 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ks2b3wmwx8r"]
+
+[ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_ws6as"]
+
+[node name="MainMenu" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -33.0
+offset_top = -21.0
+offset_right = 685.0
+offset_bottom = 394.0
+color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 48.0
+offset_right = 250.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ws6as")
+theme_override_font_sizes/font_size = 32
+text = "Last Line of Power"
+
+[node name="Level1Button" type="Button" parent="." groups=["levelbutton"]]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 25.0
+offset_top = -140.0
+offset_right = 150.0
+offset_bottom = -67.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ws6as")
+text = "Level 1"
+
+[node name="Level2Button" type="Button" parent="." groups=["levelbutton"]]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.5
+offset_top = -140.0
+offset_right = 62.5
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ws6as")
+text = "Level 2"
+
+[node name="Level3Button" type="Button" parent="." groups=["levelbutton"]]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -140.0
+offset_right = -25.0
+offset_bottom = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ws6as")
+text = "Level 3"
