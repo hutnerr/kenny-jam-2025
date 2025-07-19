@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbenponi4fear"]
+[gd_scene load_steps=10 format=3 uid="uid://dbenponi4fear"]
 
 [ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_m85gk"]
 [ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="2_ik3pl"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="2_ynnmv"]
-[ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="3_tlfoa"]
 [ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/bullet/bullet.tscn" id="4_hiqd6"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="4_ynnmv"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="5_tmyfj"]
@@ -27,9 +26,6 @@ texture = ExtResource("2_ik3pl")
 [node name="Gun" parent="." instance=ExtResource("2_ynnmv")]
 fire_rate = 1.0
 projectile = ExtResource("4_hiqd6")
-
-[node name="HealthComponent" parent="." instance=ExtResource("3_tlfoa")]
-max_health = 10000.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("4_ynnmv")]
 initial_state = NodePath("Idle")

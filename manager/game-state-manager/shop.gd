@@ -4,9 +4,10 @@ extends State
 func enter():
 	super()
 	parent.shopMenu.visible = true
-	print("In my flow state")
+
 
 func exit():
 	super()
 	parent.shopMenu.visible = false
+
 	
