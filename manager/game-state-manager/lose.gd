@@ -1,10 +1,7 @@
 extends State
 
 func enter():
-	# show lose screen
-	# has a button that takes u back to main menu
-	pass
+	parent.loseScreen.visible = true
 	
 func exit():
-	# hide on exit
-	pass
+	parent.loseScreen.visible = false

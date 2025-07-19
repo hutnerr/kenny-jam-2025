@@ -6,8 +6,6 @@ func enter():
 	
 
 func update(delta):
-	parent.healthComponent.damage(1)
-	
 	var followpath: PathFollow2D = get_parent().get_parent().get_parent()
 	if not followpath:
 		print("sad :(")

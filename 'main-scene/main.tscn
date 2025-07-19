@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ffvvdf46tio1"]
+[gd_scene load_steps=10 format=3 uid="uid://ffvvdf46tio1"]
 
 [ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://manager/enemy-spawn-manager/enemy-spawn-manager.tscn" id="1_inkwu"]
 [ext_resource type="Script" uid="uid://cc0o4eb2ka7e4" path="res://'main-scene/main.gd" id="1_lap8g"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://slvj264h1ry5" path="res://ui/shop.tscn" id="3_r3rpl"]
 [ext_resource type="PackedScene" uid="uid://dc8sraoccdlqj" path="res://ui/win.tscn" id="4_qk7l1"]
 [ext_resource type="PackedScene" uid="uid://h4vxpp7ujwvn" path="res://ui/lose.tscn" id="5_4teyh"]
+[ext_resource type="PackedScene" uid="uid://be53i0nrnk7ms" path="res://manager/energy-manager/energy-manager.tscn" id="9_4teyh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lap8g")
@@ -25,12 +26,13 @@ visible = false
 [node name="Lose" parent="GUI" instance=ExtResource("5_4teyh")]
 visible = false
 
-[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen") instance=ExtResource("2_pd65j")]
+[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen", "energyManager") instance=ExtResource("2_pd65j")]
 waveManager = NodePath("../WaveManager")
 mainMenu = NodePath("../GUI/MainMenu")
 shopMenu = NodePath("../GUI/Shop")
 loseScreen = NodePath("../GUI/Lose")
 winScreen = NodePath("../GUI/WinMenu")
+energyManager = NodePath("../EnergyManager")
 
 [node name="LevelContainer" type="Node" parent="."]
 
@@ -38,3 +40,5 @@ winScreen = NodePath("../GUI/WinMenu")
 
 [node name="WaveManager" parent="." node_paths=PackedStringArray("enemySpawner") instance=ExtResource("3_lap8g")]
 enemySpawner = NodePath("../EnemySpawner")
+
+[node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]

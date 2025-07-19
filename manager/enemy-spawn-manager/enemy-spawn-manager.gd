@@ -1,8 +1,10 @@
 extends Node
 
 @onready var paths = [
-	preload("res://levels/level1/paths/left_path_2d.tscn"),
-	preload("res://levels/level1/paths/right_path_2d.tscn")
+	preload("res://levels/level1/paths/path_2d_1.tscn"),
+	preload("res://levels/level1/paths/path_2d_2.tscn"),
+	preload("res://levels/level1/paths/path_2d_3.tscn"),
+	preload("res://levels/level1/paths/path_2d_4.tscn")
 ]
 signal enemyKilled
 
@@ -18,6 +20,7 @@ func spawnEnemy(enemy: PackedScene):
 		if not tempPath2DFollow:
 			return
 		var tempEnemy = enemy.instantiate() as BaseEnemy
+		tempEnemy.add_to_group("Enemy")
 		tempPath2DFollow.add_child(tempEnemy)
 		add_child(tempPath)
 		tempEnemy.healthComponent.died.connect(onEnemyKilled)

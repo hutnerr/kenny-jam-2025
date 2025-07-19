@@ -1,8 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://0hx15yptjgcn"]
+[gd_scene load_steps=11 format=3 uid="uid://dbenponi4fear"]
 
 [ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="1_3bcbl"]
+[ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/basic-building/basic_building.gd" id="1_m85gk"]
+[ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="2_ynnmv"]
+[ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="3_tlfoa"]
+[ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/buildings/bullet/bullet.tscn" id="3_tmyfj"]
+[ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="4_ynnmv"]
+[ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/basic-building/menu.gd" id="5_tmyfj"]
+[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/basic-building/state.gd" id="6_c67i3"]
+[ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/basic-building/active.gd" id="7_iwlsv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
+radius = 112.0
 
 [node name="BasicBuilding" type="Node2D"]
+script = ExtResource("1_m85gk")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_ynnmv")
+
+[node name="Gun" parent="." instance=ExtResource("2_ynnmv")]
+fire_rate = 1.0
+projectile = ExtResource("3_tmyfj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_3bcbl")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_tlfoa")]
+max_health = 10000.0
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("4_ynnmv")]
+initial_state = NodePath("Idle")
+
+[node name="Menu" type="Node" parent="StateMachine"]
+script = ExtResource("5_tmyfj")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_c67i3")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Active" type="Node" parent="StateMachine"]
+script = ExtResource("7_iwlsv")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
