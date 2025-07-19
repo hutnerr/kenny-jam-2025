@@ -13,7 +13,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
 radius = 112.0
 
-[node name="BasicBuilding" type="Node2D"]
+[node name="GunnerBuilding" type="Node2D"]
 script = ExtResource("1_m85gk")
 
 [node name="AttackRange" type="Area2D" parent="."]
