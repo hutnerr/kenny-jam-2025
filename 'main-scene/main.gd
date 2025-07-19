@@ -10,6 +10,7 @@ func _ready() -> void:
 	var levelbuttons = get_tree().get_nodes_in_group("levelbutton")
 	for button in levelbuttons:
 		button.pressed.connect(func(): onButtonPressed(button.name))
+	$AudioStreamPlayer2D.finished.connect(onAudioFinished)
 
 func onButtonPressed(buttonName):
 	var levelName = buttonName.replace("Button", "").to_lower()
@@ -31,3 +32,5 @@ func onButtonPressed(buttonName):
 	if stateMachine:
 		stateMachine.change_state(stateMachine.current_state, "shop")
 	
+func onAudioFinished():
+	$AudioStreamPlayer2D.play()
