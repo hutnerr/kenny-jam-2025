@@ -4,7 +4,7 @@
 [ext_resource type="TileSet" uid="uid://gj3j54gn3eoh" path="res://resources/tileset.tres" id="2_aatsp"]
 [ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
-[ext_resource type="PackedScene" uid="uid://dbenponi4fear" path="res://objects/buildings/basic-building/basic_building.tscn" id="5_sfwlx"]
+[ext_resource type="PackedScene" uid="uid://0hx15yptjgcn" path="res://objects/buildings/basic-building/basic_building.tscn" id="5_sfwlx"]
 
 [node name="Level1" type="Node2D"]
 
@@ -23,8 +23,10 @@ tile_set = ExtResource("2_aatsp")
 
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
 
-[node name="BasicBuilding" parent="." instance=ExtResource("5_sfwlx")]
+[node name="BuildingContainer" type="Node" parent="." groups=["building_container"]]
+
+[node name="BasicBuilding" parent="BuildingContainer" instance=ExtResource("5_sfwlx")]
 position = Vector2(207, 82)
 
-[node name="BasicBuilding2" parent="." instance=ExtResource("5_sfwlx")]
+[node name="BasicBuilding2" parent="BuildingContainer" instance=ExtResource("5_sfwlx")]
 position = Vector2(-127, -18)
