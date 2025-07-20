@@ -47,9 +47,10 @@ animations = [{
 
 [node name="ShockerBuilding" type="Node2D"]
 script = ExtResource("1_57wq1")
-fireRate = 10.0
-idleEnergyConsumption = 7
-activeEnergyConsumption = 7
+fireRate = 5.0
+idleEnergyConsumption = 20
+activeEnergyConsumption = 20
+damage = 1
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 
 [node name="AttackRange" type="Area2D" parent="."]

@@ -32,8 +32,8 @@ light_mask = 4
 visibility_layer = 2
 script = ExtResource("1_qjpoo")
 attacksPerSecond = 1.0
-speed = 50
-damage = 10
+speed = 75
+damage = 50
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_7aw41")

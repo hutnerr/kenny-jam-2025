@@ -15,3 +15,9 @@ func _ready() -> void:
 	# This is only here to fix dependency issue. Gun is not used for this building
 	gun.damage = self.damage
 	$MahBody.input_event.connect(onInputEvent)
+	self.upgradeOneIncrease = 1
+	self.upgradeTwoIncrease = 1
+	self.upgradeOneActiveIncrease = 4
+	self.upgradeTwoActiveIncrease = 4
+	self.upgradeOneIdleIncrease = 4
+	self.upgradeTwoIdleIncrease = 4
