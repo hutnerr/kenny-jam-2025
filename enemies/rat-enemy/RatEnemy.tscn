@@ -22,6 +22,7 @@ visibility_layer = 2
 script = ExtResource("1_4ceoe")
 attacksPerSecond = 5.0
 speed = 250
+damage = 5
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_wpn4p")

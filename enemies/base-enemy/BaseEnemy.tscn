@@ -20,8 +20,9 @@ radius = 8.0
 light_mask = 4
 visibility_layer = 2
 script = ExtResource("1_v76dx")
-attacksPerSecond = 3.0
-damage = 3
+attacksPerSecond = 2.5
+speed = 125
+damage = 15
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_v76dx")
