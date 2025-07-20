@@ -2,12 +2,23 @@ extends Node
 
 @onready var timer: Timer = $Timer
 @onready var energy: HealthComponent = $HealthComponent
+var energyBarCanvas: CanvasLayer
+var energyBar: ProgressBar
+var energyBarText: Label
+
 @export var passiveEnergyLoss: int
 var consumingEnergy: bool = false
 var energyConsumers: Array[Node]
 
 func _ready() -> void:
 	timer.timeout.connect(onTimerTimeout)
+	energy.health_changed.connect(updateProgressBar)
+	energyBarCanvas = $EnergyBar
+	energyBar = energyBarCanvas.get_child(0).get_child(0)
+	energyBarText = energyBar.get_child(0)
+	
+	updateProgressBar()
+	
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
 	energy.current_health = energy.max_health
@@ -31,6 +42,10 @@ func sumUpkeepCost():
 
 func getEnergyPercent():
 	energy.get_health_percent()
+
+func updateProgressBar():
+	energyBar.value = energy.get_health_percent()
+	energyBarText.text = str(int(energy.current_health), "/", int(energy.max_health))
 
 func onTimerTimeout():
 	if consumingEnergy:
