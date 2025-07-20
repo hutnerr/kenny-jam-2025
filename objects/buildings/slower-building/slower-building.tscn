@@ -23,6 +23,7 @@ metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 shape = SubResource("CircleShape2D_rsfnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("3_caxp2")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]

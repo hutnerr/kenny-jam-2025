@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=3 uid="uid://cifgwgubnkq53"]
+
+[ext_resource type="Script" uid="uid://cdpwmwbp36qjh" path="res://enemies/base-enemy/base_enemy.gd" id="1_qjpoo"]
+[ext_resource type="Script" uid="uid://crf4dw8r3umi4" path="res://components/health-component/health_component.gd" id="2_7aw41"]
+[ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="3_2fpy3"]
+[ext_resource type="Script" uid="uid://clxib5robgqst" path="res://enemies/base-enemy/states/move.gd" id="4_7i1bs"]
+[ext_resource type="Script" uid="uid://cspm7widr8ffr" path="res://enemies/base-enemy/states/attack.gd" id="5_scchf"]
+[ext_resource type="Script" uid="uid://drhlmdtfyudty" path="res://enemies/base-enemy/states/dead.gd" id="6_jexi5"]
+[ext_resource type="Texture2D" uid="uid://gc8uw6a72ku5" path="res://sprites/Tiles/tile_0125.png" id="7_qjpoo"]
+[ext_resource type="PackedScene" uid="uid://bjmtgnt40wbwx" path="res://components/hitbox-component/hitbox_component.tscn" id="8_r4akr"]
+[ext_resource type="PackedScene" uid="uid://dfwif62vgujhq" path="res://components/hurtbox-component/HurtboxComponent.tscn" id="9_p6yfq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbn6f"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ca2r0"]
+radius = 8.0
+
+[node name="Enemy" type="Node2D"]
+light_mask = 4
+visibility_layer = 2
+script = ExtResource("1_qjpoo")
+attacksPerSecond = 0.5
+speed = 50
+damage = 50
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("2_7aw41")
+max_health = 150.0
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_2fpy3")]
+initial_state = NodePath("Move")
+
+[node name="Move" type="Node" parent="StateMachine"]
+script = ExtResource("4_7i1bs")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("5_scchf")
+
+[node name="Timer" type="Timer" parent="StateMachine/Attack"]
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("6_jexi5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("7_qjpoo")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("8_r4akr")]
+collision_layer = 5
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_wbn6f")
+
+[node name="HurtboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("9_p6yfq")]
+collision_layer = 5
+collision_mask = 2
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent"]
+shape = SubResource("CircleShape2D_ca2r0")
