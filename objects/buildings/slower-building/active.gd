@@ -6,11 +6,12 @@ func exit():
 
 
 func basicChecks(area: Node2D):
-	if not area.is_in_group("Enemies"):
+	if not area.get_parent().is_in_group("Enemy"):
 		print("Not a damn enemies")
 		return null
-	
+
 	var enemy = area.get_parent() as BaseEnemy
+	return enemy
 
 func slowingMath(currSpeed: int, slowPercent: float):
 	return snapped(currSpeed * (slowPercent * 0.01), 1)
