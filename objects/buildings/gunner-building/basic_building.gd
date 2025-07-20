@@ -7,12 +7,13 @@ class_name BaseBuilding
 @export var fireRate: float = 1.0
 @export var idleEnergyConsumption: int = 10
 @export var activeEnergyConsumption: int = 40
-
+@export var damage: int = 5
 
 # I will shoot
 func _ready() -> void:
 	add_to_group("building")
 	attackRange.area_entered.connect($StateMachine/Idle.onAreaEntered)
 	stateMachine.custom_init(self)
+	gun.damage = self.damage
 	
 	

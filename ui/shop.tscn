@@ -40,15 +40,15 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_2v8nf")
 
 [node name="Shop-item" parent="ShopItems" instance=ExtResource("2_2v8nf")]
 layout_mode = 1
-offset_left = 2.0
+offset_left = 6.0
 offset_top = 13.0
-offset_right = -83.0
+offset_right = -79.0
 offset_bottom = -283.0
 
 [node name="Shop-item2" parent="ShopItems" instance=ExtResource("2_2v8nf")]
 layout_mode = 1
-offset_left = 3.0
-offset_top = 102.0
-offset_right = 3.0
-offset_bottom = 102.0
+offset_left = 6.0
+offset_top = 76.0
+offset_right = 6.0
+offset_bottom = 76.0
 building = ExtResource("3_1slnd")

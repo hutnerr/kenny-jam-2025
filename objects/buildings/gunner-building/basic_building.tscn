@@ -14,14 +14,13 @@ radius = 112.361
 
 [node name="BaseBuilding" type="Node2D"]
 script = ExtResource("1_m85gk")
-idleEnergyConsumption = 1000
 
 [node name="AttackRange" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_ynnmv")
 
-[node name="Sprite2D" type="Sprite2D" parent="AttackRange"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ik3pl")
 
 [node name="Gun" parent="." instance=ExtResource("2_ynnmv")]

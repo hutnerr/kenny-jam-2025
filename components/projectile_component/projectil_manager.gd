@@ -19,7 +19,6 @@ func _ready() -> void:
 	timer.wait_time = 1 / fire_rate
 	timer.timeout.connect(on_timer_timeout)
 
-
 func shoot(direction, pointAt) -> void:
 	if current_state == Launcher.LOADED:
 		
