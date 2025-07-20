@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://da17ee1bfgyhc"]
+[gd_scene load_steps=11 format=3 uid="uid://da17ee1bfgyhc"]
 
 [ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_eq5n4"]
 [ext_resource type="Texture2D" uid="uid://c78onvw6ormws" path="res://sprites/Tiles/tile_0050.png" id="2_xrpun"]
@@ -12,18 +12,26 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
 radius = 67.0298
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fo5a7"]
+
 [node name="LaserBuilding" type="Node2D"]
 script = ExtResource("1_eq5n4")
 fireRate = 0.2
 damage = 10
 
 [node name="AttackRange" type="Area2D" parent="."]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_ynnmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xrpun")
+
+[node name="MahBody" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MahBody"]
+shape = SubResource("CircleShape2D_fo5a7")
 
 [node name="Gun" parent="." instance=ExtResource("3_mlv00")]
 fire_rate = 1.0
