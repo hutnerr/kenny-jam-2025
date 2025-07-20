@@ -8,9 +8,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrhvg"]
 shader = ExtResource("1_epn3a")
 shader_parameter/stream_speed = 0.1
-shader_parameter/power_level = 0.709
+shader_parameter/power_level = 0.55
 shader_parameter/data_color = Vector3(1, 0.9, 0.2)
-shader_parameter/pixelation = 16.0
+shader_parameter/pixelation = 32.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmj1g"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
