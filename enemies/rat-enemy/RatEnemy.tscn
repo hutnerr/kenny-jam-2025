@@ -25,7 +25,7 @@ speed = 250
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_wpn4p")
-max_health = 5.0
+max_health = 15.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_ox3nl")]
 initial_state = NodePath("Move")
