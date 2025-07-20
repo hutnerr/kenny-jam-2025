@@ -13,6 +13,7 @@ class_name BaseEnemy
 var previousPosition: Vector2
 
 func _ready() -> void:
+	add_to_group("enemy")
 	rotation = 0
 	timer.wait_time = 1.0 / attacksPerSecond
 	timer.timeout.connect($StateMachine/Attack.onTimerTimout)

@@ -12,7 +12,7 @@ var pointAt: Vector2
 
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var timer: Timer  = $Timer
-@onready var shootAudio = $AudioStreamPlayer
+@onready var shootAudio = $Sound
 
 
 func _ready():
