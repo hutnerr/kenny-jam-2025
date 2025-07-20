@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dwsl3dximeosw"]
+[gd_scene load_steps=12 format=3 uid="uid://dwsl3dximeosw"]
 
 [ext_resource type="Script" uid="uid://dtbn4vjr5cifb" path="res://manager/game-state-manager/game_state_manager.gd" id="1_0kd1l"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="1_wvfeu"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://8ku1anmpcoa8" path="res://audio/footstep_carpet_001.ogg" id="6_1w1f0"]
 [ext_resource type="Script" uid="uid://bnml7qdmmpk4g" path="res://manager/game-state-manager/win.gd" id="6_osghx"]
 [ext_resource type="Script" uid="uid://dqjley407rf63" path="res://manager/game-state-manager/lose.gd" id="7_1uquq"]
+[ext_resource type="AudioStream" uid="uid://bwjrjk7hgjjlv" path="res://audio/error_006.ogg" id="7_s5cky"]
 
 [node name="GameStateManager" type="Node2D"]
 process_mode = 3
@@ -33,6 +34,9 @@ stream = ExtResource("5_3pt7d")
 
 [node name="BuildingPlaced" type="AudioStreamPlayer" parent="StateMachine/Placing"]
 stream = ExtResource("6_1w1f0")
+
+[node name="Error" type="AudioStreamPlayer" parent="StateMachine/Placing"]
+stream = ExtResource("7_s5cky")
 
 [node name="Combat" type="Node" parent="StateMachine"]
 script = ExtResource("4_u2ckf")

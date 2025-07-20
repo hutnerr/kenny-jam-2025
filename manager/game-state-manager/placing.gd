@@ -2,15 +2,15 @@ extends State
 
 @onready var buttonSound: AudioStreamPlayer = $ButtonPressed
 @onready var buildingPlaceSound: AudioStreamPlayer = $BuildingPlaced
-
+@onready var error = $Error
 
 var currentBuilding: PackedScene
 var buildingScene: Node2D
 var currentIndicator = null # the circle that shows hit range
 
+
 func enter():
 	buttonSound.play()
-	print("In placing state")
 	if currentBuilding:
 		self.buildingScene = currentBuilding.instantiate()
 		self.buildingScene.z_index += 2
@@ -69,10 +69,45 @@ func hideRangeIndicator():
 		currentIndicator.queue_free()
 		currentIndicator = null
 
+func checkTile():
+	var tilemaps: Array = get_tree().get_nodes_in_group("TileLayer")
+	for tilemap in tilemaps:
+		
+		if not tilemap:
+			return
+		
+		var tileset = tilemap.tile_set
+		if not tileset:
+			return
+
+		var global_mouse_pos = parent.get_global_mouse_position()
+		var local_mouse_pos = tilemap.to_local(global_mouse_pos)
+		var tile_coords = tilemap.local_to_map(local_mouse_pos)
+		
+		var tile_data = tilemap.get_cell_tile_data(tile_coords)
+		
+		if tile_data:
+			var terrain_set_id = tile_data.terrain_set
+			var terrain_id = tile_data.terrain
+			
+			if terrain_set_id >= 0 and terrain_id >= 0:
+				var terrain_name = tileset.get_terrain_name(terrain_set_id, terrain_id)
+				if terrain_name.to_lower() == "path" or terrain_name.to_lower() == "lake":
+					print("Shouldn't place that shiii")
+					return false
+
+		else:
+			print("No tile at position: ", tile_coords)
+	print("We can place it!!")
+	return true
 func placeTower():
-	buildingPlaceSound.play()
-	transitioned.emit(self, "shop")
-	#change state
+	
+	if checkTile():
+		buildingPlaceSound.play()
+		transitioned.emit(self, "shop")
+		#change state
+	else:
+		error.play()
 	
 func escTower():
 	
