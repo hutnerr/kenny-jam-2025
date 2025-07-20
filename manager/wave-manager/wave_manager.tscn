@@ -4,7 +4,6 @@
 
 [node name="WaveManager" type="Node"]
 script = ExtResource("1_e5wl4")
-numOfPaths = 4
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05

@@ -27,6 +27,18 @@ func onButtonPressed(buttonName):
 	waveManager.waves = load(waveScript).new().waves
 	waveManager.finalWave = len(waveManager.waves)
 
+	print(levelName)	
+	match levelName:
+		"level1":
+			waveManager.setNumPaths(4)
+		"level2":
+			waveManager.setNumPaths(8)
+		"level3":
+			waveManager.setNumPaths(2)
+		_:
+			pass
+	print("numpaths: ", waveManager.numOfPaths)
+
 	# begin the game
 	var levelScene = levelPackedScene.instantiate()
 	levelContainer.add_child(levelScene)

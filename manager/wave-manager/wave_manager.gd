@@ -2,9 +2,9 @@ extends Node
 class_name WaveManager
 
 @export var waveScript: Script
-@export var numOfPaths: int
 @export var enemySpawner: Node
 
+var numOfPaths: int
 var spawnDelayMax = 0.6
 var spawnDelayMin = 0.1
 var waves = null
@@ -23,7 +23,10 @@ func sum(numList: Array) -> int:
 	for num in numList:
 		total += num
 	return total
-	
+
+func setNumPaths(num):
+	self.numOfPaths = num
+
 func _ready() -> void:
 	enemySpawner.enemyKilled.connect(onEnemyKilled)
 
