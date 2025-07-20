@@ -1,0 +1,94 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsj5cqubk7x06"]
+
+[ext_resource type="StyleBox" uid="uid://db8ji27jy85dx" path="res://ui/styles/shoppanel.tres" id="1_inulo"]
+[ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="2_a1pa1"]
+[ext_resource type="Script" uid="uid://v8imhu543els" path="res://ui/upgrade_panel.gd" id="2_o14q7"]
+[ext_resource type="StyleBox" uid="uid://c6sdd3uq712w5" path="res://ui/styles/button-hover.tres" id="3_o14q7"]
+[ext_resource type="StyleBox" uid="uid://bpte2njrqshif" path="res://ui/styles/button.tres" id="4_y8hl0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyvbe"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="UpgradePanel" type="Panel"]
+offset_left = 11.0
+offset_top = 117.0
+offset_right = 99.0
+offset_bottom = 326.0
+theme_override_styles/panel = ExtResource("1_inulo")
+script = ExtResource("2_o14q7")
+
+[node name="CloseButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 65.0
+offset_top = 6.0
+offset_right = 82.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_a1pa1")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = SubResource("StyleBoxFlat_tyvbe")
+theme_override_styles/normal = SubResource("StyleBoxFlat_tyvbe")
+action_mode = 0
+text = "x"
+text_overrun_behavior = 3
+autowrap_mode = 1
+
+[node name="UpgradeOneButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 83.0
+offset_right = 81.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("2_a1pa1")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("3_o14q7")
+theme_override_styles/pressed = ExtResource("4_y8hl0")
+theme_override_styles/normal = ExtResource("4_y8hl0")
+action_mode = 0
+text = "UPG ONE"
+autowrap_mode = 2
+
+[node name="UpgradeTwoButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 133.0
+offset_right = 81.0
+offset_bottom = 178.0
+theme_override_fonts/font = ExtResource("2_a1pa1")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("3_o14q7")
+theme_override_styles/pressed = ExtResource("4_y8hl0")
+theme_override_styles/normal = ExtResource("4_y8hl0")
+action_mode = 0
+text = "UPG TWO"
+autowrap_mode = 2
+
+[node name="DeleteButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 182.0
+offset_right = 81.0
+offset_bottom = 200.0
+theme_override_fonts/font = ExtResource("2_a1pa1")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/hover = ExtResource("3_o14q7")
+theme_override_styles/pressed = ExtResource("4_y8hl0")
+theme_override_styles/normal = ExtResource("4_y8hl0")
+action_mode = 0
+text = "DELETE"
+
+[node name="StatsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 30.0
+offset_right = 74.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("2_a1pa1")
+theme_override_font_sizes/font_size = 8
+text = "DMG: 
+ROF:
+IDLE:
+UPKEEP:"
