@@ -2,10 +2,11 @@ extends Node
 class_name WaveManager
 
 @export var waveScript: Script
-@export var spawnDelay = 0.3
 @export var numOfPaths: int
 @export var enemySpawner: Node
 
+var spawnDelayMax = 0.6
+var spawnDelayMin = 0.1
 var waves = null
 var currentWave = 0
 var finalWave = 0
@@ -36,14 +37,21 @@ func onEnemyKilled():
 		else:	
 			waveEnded.emit()
 
-# since waves are a dict, they may be little dif each time
+func getTotalEnemiesInWave(wave):
+	var total = 0
+	for enemyData in wave:
+		total += enemyData[1]
+	return total
+
 func beginWave():
 	waveStarted.emit()
 	var wave = self.waves[currentWave]
-	enemyCount = sum(wave.values()) * numOfPaths
-	for enemyPath in wave:
+	enemyCount = getTotalEnemiesInWave(wave) * numOfPaths
+	for enemyData in wave:
+		var enemyPath = enemyData[0]
+		var numEnemies = enemyData[1]
 		var enemy = load(enemyPath)
-		for i in range(wave[enemyPath]):
-			await get_tree().create_timer(spawnDelay).timeout
+		for i in range(numEnemies):
+			await get_tree().create_timer(randf_range(spawnDelayMin, spawnDelayMax)).timeout
 			enemySpawner.spawnEnemy(enemy)
 	spawningEnded.emit()

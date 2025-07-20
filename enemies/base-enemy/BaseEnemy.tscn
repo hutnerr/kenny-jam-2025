@@ -21,11 +21,11 @@ light_mask = 4
 visibility_layer = 2
 script = ExtResource("1_v76dx")
 attacksPerSecond = 3.0
-damage = 10009
+damage = 10
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_v76dx")
-max_health = 2.0
+max_health = 50.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("2_dlnc5")]
 initial_state = NodePath("Move")

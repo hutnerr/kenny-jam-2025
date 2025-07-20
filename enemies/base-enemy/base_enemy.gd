@@ -1,7 +1,6 @@
 extends Node2D
 class_name BaseEnemy
 
-
 @onready var stateMachine: StateMachine = $StateMachine
 @onready var healthComponent: HealthComponent = $HealthComponent
 @onready var hurtboxComponent: HurtboxComponent = $HurtboxComponent
