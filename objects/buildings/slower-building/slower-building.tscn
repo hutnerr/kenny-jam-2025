@@ -17,17 +17,18 @@ fireRate = 0.0
 damage = 0
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(2.3125, 2)
-texture = ExtResource("2_n47fb")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("3_caxp2")
-
 [node name="SlowArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SlowArea"]
 shape = SubResource("CircleShape2D_rsfnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("3_caxp2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(2.3125, 2)
+texture = ExtResource("2_n47fb")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8jmxi")
