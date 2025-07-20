@@ -6,6 +6,7 @@ class_name BaseEnemy
 @onready var hurtboxComponent: HurtboxComponent = $HurtboxComponent
 @onready var hitboxComponent: HitboxComponent = $HitboxComponent
 @onready var timer: Timer = $StateMachine/Attack/Timer
+@onready var healthBar = $ProgressBar
 @export var attacksPerSecond: float = 2.0
 @export var speed : int = 100
 @export var damage : int = 1 # how much to hurt nexus
@@ -19,7 +20,12 @@ func _ready() -> void:
 	timer.timeout.connect($StateMachine/Attack.onTimerTimout)
 	stateMachine.custom_init(self)
 	healthComponent.died.connect(onDeath)
+	healthComponent.health_changed.connect(updateHealthBar)
 	hitboxComponent.damage = damage
+	updateHealthBar()
+
+func updateHealthBar():
+	healthBar.value = healthComponent.get_health_percent()
 
 func _process(delta: float) -> void:
 	var sprite = $Sprite2D
