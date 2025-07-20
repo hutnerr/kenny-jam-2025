@@ -12,12 +12,16 @@ var pointAt: Vector2
 
 @onready var hitbox_component: HitboxComponent = $HitboxComponent
 @onready var timer: Timer  = $Timer
+@onready var shootAudio = $AudioStreamPlayer
+
 
 func _ready():
+	shootAudio.play()
 	timer.wait_time = projectile_travel_time
 	timer.timeout.connect(on_timer_timeout)
 	hitbox_component.area_entered.connect(on_area_entered)
 	
+
 
 func _process(_delta: float) -> void:
 	velocity = Vector2(projectile_speed, 0).rotated(direction)
