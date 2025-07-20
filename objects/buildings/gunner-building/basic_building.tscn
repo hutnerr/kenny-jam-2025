@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbenponi4fear"]
+[gd_scene load_steps=14 format=3 uid="uid://dbenponi4fear"]
 
 [ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_m85gk"]
 [ext_resource type="Texture2D" uid="uid://cgh22xrlgqjet" path="res://resources/tile_0085.png" id="2_ik3pl"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="2_ynnmv"]
+[ext_resource type="Texture2D" uid="uid://dcx5he4tcc2wm" path="res://resources/Sprite-0004 h.png" id="3_hiqd6"]
 [ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/bullet/bullet.tscn" id="4_hiqd6"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="4_ynnmv"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="5_tmyfj"]
 [ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/idle.gd" id="6_c67i3"]
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="7_iwlsv"]
+[ext_resource type="AudioStream" uid="uid://y5y02467j584" path="res://audio/click_001.ogg" id="10_iojd0"]
+[ext_resource type="AudioStream" uid="uid://bwjrjk7hgjjlv" path="res://audio/error_006.ogg" id="11_f5wxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
 radius = 112.361
@@ -24,6 +27,10 @@ shape = SubResource("CircleShape2D_ynnmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ik3pl")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_hiqd6")
 
 [node name="MahBody" type="Area2D" parent="."]
 
@@ -48,3 +55,9 @@ metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 [node name="Active" type="Node" parent="StateMachine"]
 script = ExtResource("7_iwlsv")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Click001" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_iojd0")
+
+[node name="Error006" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_f5wxs")

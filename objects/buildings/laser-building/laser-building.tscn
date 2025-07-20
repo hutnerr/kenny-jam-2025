@@ -1,13 +1,16 @@
-[gd_scene load_steps=11 format=3 uid="uid://da17ee1bfgyhc"]
+[gd_scene load_steps=14 format=3 uid="uid://da17ee1bfgyhc"]
 
 [ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_eq5n4"]
-[ext_resource type="Texture2D" uid="uid://c78onvw6ormws" path="res://sprites/Tiles/tile_0050.png" id="2_xrpun"]
+[ext_resource type="Texture2D" uid="uid://bve47c3dfvql6" path="res://sprites/Tiles/tile_0068.png" id="2_icl50"]
+[ext_resource type="Texture2D" uid="uid://dv7d8uo4lp7ah" path="res://resources/Sprite-0005h.png" id="3_3v0j6"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="3_mlv00"]
 [ext_resource type="PackedScene" uid="uid://bb036tc8cifp7" path="res://objects/buildings/laser-building/laser/laser.tscn" id="4_icl50"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="6_yw02i"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="7_tjpe4"]
 [ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/idle.gd" id="8_10sss"]
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="9_vd2hv"]
+[ext_resource type="AudioStream" uid="uid://y5y02467j584" path="res://audio/click_001.ogg" id="10_0fxve"]
+[ext_resource type="AudioStream" uid="uid://bwjrjk7hgjjlv" path="res://audio/error_006.ogg" id="11_r1o3y"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
 radius = 67.0298
@@ -27,7 +30,11 @@ damage = 10
 shape = SubResource("CircleShape2D_ynnmv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_xrpun")
+texture = ExtResource("2_icl50")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_3v0j6")
 
 [node name="MahBody" type="Area2D" parent="."]
 
@@ -52,3 +59,12 @@ metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 [node name="Active" type="Node" parent="StateMachine"]
 script = ExtResource("9_vd2hv")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Click001" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0fxve")
+
+[node name="Error006" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_r1o3y")
+
+[node name="Click002" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0fxve")

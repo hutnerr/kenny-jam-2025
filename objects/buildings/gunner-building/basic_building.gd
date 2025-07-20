@@ -6,6 +6,7 @@ signal statsChanged(damage, fireRate, attackRange, idleEnergyConsumption, active
 @onready var stateMachine: StateMachine = $StateMachine
 @onready var gun: Node2D = $Gun
 @onready var attackRange: Area2D = $AttackRange
+@onready var highlight = $Sprite2D2
 @export var fireRate: float = 1.0
 @export var idleEnergyConsumption: int = 2
 @export var activeEnergyConsumption: int = 10
@@ -39,9 +40,12 @@ func onInputEvent(viewport, event, shpidx):
 			upgradePanel.setActiveItem(self)
 			upgradePanel.visible = true
 
+
 func upgradeOne():
 	if upgradeOneLevel == 3:
+		$Error006.play()
 		return
+	$Click001.play()
 	damage += upgradeOneIncrease
 	gun.damage = damage
 	idleEnergyConsumption += upgradeOneIdleIncrease
@@ -50,8 +54,11 @@ func upgradeOne():
 	statsChanged.emit(self.damage, self.fireRate, self.attackRange, self.idleEnergyConsumption, self.activeEnergyConsumption)
 	
 func upgradeTwo():
+	
 	if upgradeTwoLevel == 3:
+		$Error006.play()
 		return
+	$Click001.play()
 	fireRate += upgradeTwoIncrease
 	gun.setFireRate(fireRate)
 	idleEnergyConsumption += upgradeTwoIdleIncrease
