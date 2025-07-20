@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://boe5a6k6hxim4"]
+[gd_scene load_steps=13 format=3 uid="uid://boe5a6k6hxim4"]
 
 [ext_resource type="Script" uid="uid://ppsqy51twore" path="res://objects/buildings/buffer-building/buffer_building.gd" id="1_i4i7x"]
+[ext_resource type="Texture2D" uid="uid://cn47lm0ybetfa" path="res://sprites/Tiles/tile_0034.png" id="2_k6n2b"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="2_sjcev"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="3_k6n2b"]
 [ext_resource type="Script" uid="uid://cv8urce8ftyof" path="res://objects/buildings/buffer-building/active.gd" id="4_ah7e2"]
@@ -45,6 +46,16 @@ metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BuffArea"]
 shape = SubResource("CircleShape2D_itxsi")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_k6n2b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -6)
+sprite_frames = SubResource("SpriteFrames_wos0c")
+animation = &"Waving"
+frame_progress = 0.800402
+
 [node name="Gun" parent="." instance=ExtResource("2_sjcev")]
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_k6n2b")]
@@ -61,9 +72,3 @@ metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_sjcev")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -6)
-sprite_frames = SubResource("SpriteFrames_wos0c")
-animation = &"Waving"
-frame_progress = 0.800402
