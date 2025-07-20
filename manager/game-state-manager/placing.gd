@@ -10,10 +10,12 @@ func enter():
 		self.buildingScene = currentBuilding.instantiate()
 		self.buildingScene.z_index += 2
 		get_tree().get_first_node_in_group("building_container").add_child(buildingScene)
+	parent.energyManager.get_child(2).visible = false
 
 func exit():
 	hideRangeIndicator()
 	self.currentBuilding = null
+	parent.energyManager.get_child(2).visible = true
 
 func update(_delta):
 	super(_delta)
