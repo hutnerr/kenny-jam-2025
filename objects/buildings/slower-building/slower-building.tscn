@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxla5jj8tm2pq"]
+
+[ext_resource type="Script" uid="uid://d2mr6flmqlydy" path="res://objects/buildings/slower-building/slower_building.gd" id="1_wue0j"]
+[ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="2_8jmxi"]
+[ext_resource type="Script" uid="uid://bgq8awm01uil5" path="res://objects/buildings/slower-building/active.gd" id="3_n47fb"]
+[ext_resource type="Script" uid="uid://b34cdnu5o2ooi" path="res://components/state-machine/state.gd" id="4_caxp2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rsfnq"]
+
+[node name="SlowerBuilding" type="Node2D"]
+script = ExtResource("1_wue0j")
+fireRate = null
+idleEnergyConsumption = null
+activeEnergyConsumption = null
+damage = null
+metadata/_custom_type_script = "uid://wqygm3xx8yiw"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rsfnq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_8jmxi")
+metadata/_custom_type_script = "uid://1sg4yj5iuxdd"
+
+[node name="Active" type="Node" parent="StateMachine"]
+script = ExtResource("3_n47fb")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Menu" type="Node" parent="StateMachine"]
+script = ExtResource("4_caxp2")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
