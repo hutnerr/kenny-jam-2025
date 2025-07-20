@@ -9,15 +9,11 @@
 
 [node name="SlowerBuilding" type="Node2D"]
 script = ExtResource("1_wue0j")
-fireRate = null
-idleEnergyConsumption = null
-activeEnergyConsumption = null
-damage = null
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="SlowArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SlowArea"]
 shape = SubResource("CircleShape2D_rsfnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
