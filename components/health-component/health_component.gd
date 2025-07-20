@@ -18,6 +18,13 @@ func damage(damage_dealt: float):
 		health_changed.emit()
 		Callable(check_death).call_deferred()
 
+func heal(amount_healed: float):
+	var newHP = current_health + amount_healed
+	if newHP > max_health:
+		current_health = max_health
+	else:
+		current_health = newHP
+
 func get_health_percent():
 	if max_health <= 0:
 		return 0

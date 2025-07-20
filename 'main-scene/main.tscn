@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ffvvdf46tio1"]
+[gd_scene load_steps=13 format=3 uid="uid://ffvvdf46tio1"]
 
 [ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://manager/enemy-spawn-manager/enemy-spawn-manager.tscn" id="1_inkwu"]
 [ext_resource type="Script" uid="uid://cc0o4eb2ka7e4" path="res://'main-scene/main.gd" id="1_lap8g"]
@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://slvj264h1ry5" path="res://ui/shop.tscn" id="3_r3rpl"]
 [ext_resource type="PackedScene" uid="uid://dc8sraoccdlqj" path="res://ui/win.tscn" id="4_qk7l1"]
 [ext_resource type="PackedScene" uid="uid://h4vxpp7ujwvn" path="res://ui/lose.tscn" id="5_4teyh"]
+[ext_resource type="PackedScene" uid="uid://blw66yjphtbcc" path="res://ui/WeatherLayer.tscn" id="6_b6e6u"]
 [ext_resource type="PackedScene" uid="uid://be53i0nrnk7ms" path="res://manager/energy-manager/energy-manager.tscn" id="9_4teyh"]
 [ext_resource type="AudioStream" uid="uid://dkbb6c4q2jk7p" path="res://resources/kenny2025.wav" id="10_53317"]
+[ext_resource type="PackedScene" uid="uid://ceh0taawdy8xj" path="res://manager/weather-manager/WeatherManager.tscn" id="10_ipp4m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lap8g")
@@ -27,9 +29,12 @@ visible = false
 [node name="Lose" parent="GUI" instance=ExtResource("5_4teyh")]
 visible = false
 
+[node name="WeatherLayer" parent="GUI" instance=ExtResource("6_b6e6u")]
+visible = false
+
 [node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]
 
-[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen", "energyManager", "enemySpawnManager") instance=ExtResource("2_pd65j")]
+[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen", "energyManager", "enemySpawnManager", "weatherManager", "weatherLayer") instance=ExtResource("2_pd65j")]
 waveManager = NodePath("../WaveManager")
 mainMenu = NodePath("../GUI/MainMenu")
 shopMenu = NodePath("../GUI/Shop")
@@ -37,6 +42,8 @@ loseScreen = NodePath("../GUI/Lose")
 winScreen = NodePath("../GUI/WinMenu")
 energyManager = NodePath("../EnergyManager")
 enemySpawnManager = NodePath("../EnemySpawner")
+weatherManager = NodePath("../WeatherManager")
+weatherLayer = NodePath("../GUI/WeatherLayer")
 
 [node name="LevelContainer" type="Node" parent="." groups=["level"]]
 
@@ -46,6 +53,8 @@ enemySpawnManager = NodePath("../EnemySpawner")
 enemySpawner = NodePath("../EnemySpawner")
 
 [node name="BuildingContainer" type="Node" parent="." groups=["building_container"]]
+
+[node name="WeatherManager" parent="." instance=ExtResource("10_ipp4m")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_53317")

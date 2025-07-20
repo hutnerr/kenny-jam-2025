@@ -11,7 +11,12 @@ func _ready() -> void:
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
 	energy.current_health = energy.max_health
-		
+
+func healByWeather(percent: float):
+	print("healed by ", percent * 100, "%")
+	var amount_to_heal = energy.current_health * percent
+	energy.heal(amount_to_heal)
+
 func getEnergyConsumers():
 	self.energyConsumers = get_tree().get_nodes_in_group("building")
 	

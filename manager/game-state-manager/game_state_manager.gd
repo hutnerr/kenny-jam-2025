@@ -8,6 +8,8 @@ extends Node2D
 @export var winScreen: CanvasLayer
 @export var energyManager: Node
 @export var enemySpawnManager: Node
+@export var weatherManager: Node
+@export var weatherLayer: CanvasLayer
 
 func _ready() -> void:
 	stateMachine.custom_init(self)

@@ -5,9 +5,6 @@ func enter():
 	super()
 	parent.shopMenu.visible = true
 
-
 func exit():
 	super()
 	parent.shopMenu.visible = false
-
-	
