@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://btgwpu1gguvvi"]
+[gd_scene load_steps=5 format=4 uid="uid://btgwpu1gguvvi"]
 
 [ext_resource type="PackedScene" uid="uid://b5jutp8tjd464" path="res://resources/tile_map_layer.tscn" id="1_eq150"]
 [ext_resource type="TileSet" uid="uid://gj3j54gn3eoh" path="res://resources/tileset.tres" id="2_aatsp"]
 [ext_resource type="PackedScene" uid="uid://crb7srwt131g7" path="res://objects/core/Core.tscn" id="2_ps0pm"]
 [ext_resource type="PackedScene" uid="uid://dtrd1q8vv6kqd" path="res://objects/camera/camera_2d.tscn" id="3_ps0pm"]
-[ext_resource type="PackedScene" uid="uid://boe5a6k6hxim4" path="res://objects/buildings/buffer-building/buffer-building.tscn" id="5_sfwlx"]
 
 [node name="Level1" type="Node2D"]
 
@@ -22,6 +21,3 @@ tile_set = ExtResource("2_aatsp")
 [node name="Core" parent="." instance=ExtResource("2_ps0pm")]
 
 [node name="Camera2D" parent="." instance=ExtResource("3_ps0pm")]
-
-[node name="Buffer-building" parent="." instance=ExtResource("5_sfwlx")]
-position = Vector2(145, -42)

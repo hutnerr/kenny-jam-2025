@@ -20,7 +20,6 @@ fireRate = 0.2
 damage = 10
 
 [node name="AttackRange" type="Area2D" parent="."]
-collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
 shape = SubResource("CircleShape2D_ynnmv")

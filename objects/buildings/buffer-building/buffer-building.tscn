@@ -55,6 +55,7 @@ texture = ExtResource("2_k6n2b")
 position = Vector2(4, -6)
 sprite_frames = SubResource("SpriteFrames_wos0c")
 animation = &"Waving"
+autoplay = "Waving"
 frame_progress = 0.800402
 
 [node name="Gun" parent="." instance=ExtResource("2_sjcev")]
