@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://slvj264h1ry5"]
+[gd_scene load_steps=12 format=3 uid="uid://slvj264h1ry5"]
 
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_foe6g"]
 [ext_resource type="PackedScene" uid="uid://c2c2abf7vi44f" path="res://ui/shop-item.tscn" id="2_2v8nf"]
+[ext_resource type="StyleBox" uid="uid://c6sdd3uq712w5" path="res://ui/styles/button-hover.tres" id="2_i5mka"]
 [ext_resource type="PackedScene" uid="uid://da17ee1bfgyhc" path="res://objects/buildings/laser-building/laser-building.tscn" id="3_1slnd"]
+[ext_resource type="StyleBox" uid="uid://bpte2njrqshif" path="res://ui/styles/button.tres" id="3_tyvbe"]
 [ext_resource type="PackedScene" uid="uid://boe5a6k6hxim4" path="res://objects/buildings/buffer-building/buffer-building.tscn" id="4_e4u7y"]
 [ext_resource type="PackedScene" uid="uid://bxla5jj8tm2pq" path="res://objects/buildings/slower-building/slower-building.tscn" id="5_t603m"]
 [ext_resource type="PackedScene" uid="uid://w2doqccokfwg" path="res://objects/buildings/shocker-building/shocker-building.tscn" id="6_67uj7"]
@@ -29,12 +31,15 @@ expand_margin_left = 6.0
 [node name="Shop" type="CanvasLayer"]
 
 [node name="PlayButton" type="Button" parent="."]
-offset_left = 6.0
+offset_left = 3.0
 offset_top = 7.0
-offset_right = 94.0
+offset_right = 97.0
 offset_bottom = 41.0
 theme_override_fonts/font = ExtResource("1_foe6g")
+theme_override_styles/hover = ExtResource("2_i5mka")
+theme_override_styles/pressed = ExtResource("3_tyvbe")
 theme_override_styles/normal = SubResource("StyleBoxFlat_foe6g")
+action_mode = 0
 text = "START"
 
 [node name="ShopItems" type="Panel" parent="."]

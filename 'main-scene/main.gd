@@ -13,7 +13,7 @@ func _ready() -> void:
 	$AudioStreamPlayer2D.finished.connect(onAudioFinished)
 
 func onButtonPressed(buttonName):
-	var levelName = buttonName.replace("Button", "").to_lower()
+	var levelName = buttonName.replace("Button", "").to_lower()	
 	var levelPath = levelFormat.replace("PLCH", buttonName.replace("Button", "").to_lower())
 	var levelPackedScene = load(levelPath) as PackedScene
 	
@@ -24,7 +24,6 @@ func onButtonPressed(buttonName):
 	waveManager.waves = load(waveScript).new().waves
 	waveManager.finalWave = len(waveManager.waves)
 
-	
 	# begin the game
 	var levelScene = levelPackedScene.instantiate()
 	levelContainer.add_child(levelScene)
