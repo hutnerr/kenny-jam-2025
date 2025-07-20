@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bb036tc8cifp7" path="res://objects/buildings/laser-building/laser/laser.tscn" id="4_icl50"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="6_yw02i"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="7_tjpe4"]
-[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/state.gd" id="8_10sss"]
+[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/idle.gd" id="8_10sss"]
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="9_vd2hv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dwmaw0ua5u328" path="res://objects/bullet/bullet.tscn" id="4_hiqd6"]
 [ext_resource type="PackedScene" uid="uid://1hukhbvl0pwt" path="res://components/state-machine/state_machine.tscn" id="4_ynnmv"]
 [ext_resource type="Script" uid="uid://b31acecjm5xhc" path="res://objects/buildings/gunner-building/states/menu.gd" id="5_tmyfj"]
-[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/state.gd" id="6_c67i3"]
+[ext_resource type="Script" uid="uid://w7k18fp3be55" path="res://objects/buildings/gunner-building/states/idle.gd" id="6_c67i3"]
 [ext_resource type="Script" uid="uid://db3wnt5wr71ia" path="res://objects/buildings/gunner-building/states/active.gd" id="7_iwlsv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
