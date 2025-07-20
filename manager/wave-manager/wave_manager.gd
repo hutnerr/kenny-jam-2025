@@ -53,5 +53,10 @@ func beginWave():
 		var enemy = load(enemyPath)
 		for i in range(numEnemies):
 			await get_tree().create_timer(randf_range(spawnDelayMin, spawnDelayMax)).timeout
-			enemySpawner.spawnEnemy(enemy)
+			# if we're alive, then spawn enemy
+			if not $"../EnergyManager".energy.imDead:
+				enemySpawner.spawnEnemy(enemy)
+			else:
+				print("we dead so stop spawning")
+				return
 	spawningEnded.emit()

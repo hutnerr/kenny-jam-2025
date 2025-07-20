@@ -5,6 +5,7 @@ var waves
 const SOLDIER = "res://enemies/base-enemy/BaseEnemy.tscn"
 const BEEFYSOLDIER = "res://enemies/beefy-enemy/BeefyEnemy.tscn"
 const TANK = "res://enemies/tank-enemy/TankEnemy.tscn"
+const RAT = "res://enemies/rat-enemy/RatEnemy.tscn"
 
 func _init() -> void:
 	self.waves = {
@@ -16,6 +17,7 @@ func _init() -> void:
 			[BEEFYSOLDIER, 1],
 			[SOLDIER, 4],
 			[SOLDIER, 4],
+			[RAT, 30]
 		],
 		2 : [
 			[SOLDIER, 16],
