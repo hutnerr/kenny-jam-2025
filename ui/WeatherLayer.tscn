@@ -5,7 +5,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hq8e0"]
 shader = ExtResource("2_wlmai")
-shader_parameter/weather_type = 1.0
+shader_parameter/weather_type = 0.0
 shader_parameter/time_speed = 1.0
 shader_parameter/intensity = 1.0
 shader_parameter/rain_density = 80.0
