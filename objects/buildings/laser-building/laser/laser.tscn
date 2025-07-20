@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb036tc8cifp7"]
+[gd_scene load_steps=10 format=3 uid="uid://bb036tc8cifp7"]
 
 [ext_resource type="Script" uid="uid://b36fcvmbqw4vp" path="res://objects/bullet/bullet.gd" id="1_ra7b6"]
 [ext_resource type="Shader" uid="uid://cxlv5v3ghc6lm" path="res://objects/buildings/laser-building/laser/laser.gdshader" id="2_0yc0n"]
 [ext_resource type="Script" uid="uid://biwpbbancuu7i" path="res://components/hitbox-component/hitbox_component.gd" id="3_0yc0n"]
 [ext_resource type="AudioStream" uid="uid://btd0mpiu6vfuh" path="res://audio/maximize_003.ogg" id="4_qgxtv"]
-[ext_resource type="AudioStream" uid="uid://n5uotkdl45rt" path="res://audio/minimize_003.ogg" id="5_2mio4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_haocd"]
 shader = ExtResource("2_0yc0n")
@@ -29,6 +28,8 @@ size = Vector2(63, 8)
 size = Vector2(29, 2)
 
 [node name="PlayerProjectile" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_ra7b6")
 projectile_speed = 1
 projectile_travel_time = 0.1
@@ -62,8 +63,5 @@ autostart = true
 
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_qgxtv")
-
-[node name="Minimize" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_2mio4")
-volume_db = -15.0
-pitch_scale = 0.5
+volume_db = -25.0
+pitch_scale = 0.8

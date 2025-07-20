@@ -27,7 +27,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.247059, 0.14902, 0.192157, 1)
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy3" type="Node2D"]
 light_mask = 4
 visibility_layer = 2
 script = ExtResource("1_4ceoe")
