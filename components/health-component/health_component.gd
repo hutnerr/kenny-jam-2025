@@ -24,6 +24,7 @@ func heal(amount_healed: float):
 		current_health = max_health
 	else:
 		current_health = newHP
+	health_changed.emit()
 
 func get_health_percent():
 	if max_health <= 0:

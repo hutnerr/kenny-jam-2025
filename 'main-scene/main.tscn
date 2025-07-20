@@ -57,5 +57,6 @@ enemySpawner = NodePath("../EnemySpawner")
 [node name="WeatherManager" parent="." instance=ExtResource("10_ipp4m")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
 stream = ExtResource("10_53317")
 autoplay = true

@@ -6,6 +6,8 @@ signal buildingRequest(building)
 
 func _ready() -> void:
 	$TextureButton.pressed.connect(onButtonPressed)
+	# steal the image of the scene and then make it the texture button, also 
+	# use the info we get from the scene to add the got damn things
 
 func change_to_placing_state():
 	var gameStateManager = get_parent().get_parent().get_parent().get_parent().get_child(2)
