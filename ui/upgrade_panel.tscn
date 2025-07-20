@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bsj5cqubk7x06"]
+[gd_scene load_steps=8 format=3 uid="uid://86daigldh6yv"]
 
-[ext_resource type="StyleBox" uid="uid://db8ji27jy85dx" path="res://ui/styles/shoppanel.tres" id="1_inulo"]
+[ext_resource type="StyleBox" path="res://ui/styles/shoppanel.tres" id="1_inulo"]
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="2_a1pa1"]
 [ext_resource type="Script" uid="uid://v8imhu543els" path="res://ui/upgrade_panel.gd" id="2_o14q7"]
 [ext_resource type="StyleBox" uid="uid://c6sdd3uq712w5" path="res://ui/styles/button-hover.tres" id="3_o14q7"]
 [ext_resource type="StyleBox" uid="uid://bpte2njrqshif" path="res://ui/styles/button.tres" id="4_y8hl0"]
+[ext_resource type="AudioStream" uid="uid://y5y02467j584" path="res://audio/click_001.ogg" id="6_o14q7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyvbe"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -92,3 +93,6 @@ text = "DMG:
 ROF:
 IDLE:
 UPKEEP:"
+
+[node name="Click001" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o14q7")

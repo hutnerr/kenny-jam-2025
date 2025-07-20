@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://w2doqccokfwg"]
+[gd_scene load_steps=17 format=3 uid="uid://w2doqccokfwg"]
 
 [ext_resource type="Script" uid="uid://iwt55j430xfo" path="res://objects/buildings/shocker-building/shocker_building.gd" id="1_57wq1"]
-[ext_resource type="Texture2D" uid="uid://c86ofxvsnulef" path="res://sprites/Tiles/tile_0044.png" id="2_4rp8b"]
+[ext_resource type="Texture2D" uid="uid://vum7mexmrlrm" path="res://sprites/Tiles/tile_0008.png" id="2_wxwc8"]
+[ext_resource type="Texture2D" uid="uid://b8yym60hi32lb" path="res://resources/Sprite-0006h.png" id="3_8etrn"]
 [ext_resource type="Texture2D" uid="uid://sgwby2qbuje5" path="res://resources/shocker-shocking-sprite.png" id="3_57wq1"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="3_ke70k"]
 [ext_resource type="Script" uid="uid://b34cdnu5o2ooi" path="res://components/state-machine/state.gd" id="4_57wq1"]
 [ext_resource type="Script" uid="uid://lq132g16ujwc" path="res://objects/buildings/shocker-building/active.gd" id="5_jaawr"]
 [ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="7_jaawr"]
+[ext_resource type="AudioStream" uid="uid://y5y02467j584" path="res://audio/click_001.ogg" id="9_tdstu"]
+[ext_resource type="AudioStream" uid="uid://bwjrjk7hgjjlv" path="res://audio/error_006.ogg" id="10_indio"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaawr"]
 radius = 23.0
@@ -53,7 +56,11 @@ metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 shape = SubResource("CircleShape2D_jaawr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4rp8b")
+texture = ExtResource("2_wxwc8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_8etrn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tdstu")
@@ -82,3 +89,9 @@ script = ExtResource("4_57wq1")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 
 [node name="Gun" parent="." instance=ExtResource("7_jaawr")]
+
+[node name="Click001" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_tdstu")
+
+[node name="Error006" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_indio")
