@@ -20,13 +20,13 @@ radius = 8.0
 light_mask = 4
 visibility_layer = 2
 script = ExtResource("1_qjpoo")
-attacksPerSecond = 0.5
+attacksPerSecond = 1.0
 speed = 50
-damage = 50
+damage = 10
 
 [node name="HealthComponent" type="Node" parent="."]
 script = ExtResource("2_7aw41")
-max_health = 150.0
+max_health = 75.0
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("3_2fpy3")]
 initial_state = NodePath("Move")

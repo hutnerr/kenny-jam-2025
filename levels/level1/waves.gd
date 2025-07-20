@@ -10,23 +10,29 @@ const RAT = "res://enemies/rat-enemy/RatEnemy.tscn"
 func _init() -> void:
 	self.waves = {
 		1 : [
-			#[TANK, 1],
+			[TANK, 1],
 			[SOLDIER, 1],
-			#[BEEFYSOLDIER, 1],
-			#[SOLDIER, 4],
-			#[BEEFYSOLDIER, 1],
-			#[SOLDIER, 4],
-			#[SOLDIER, 4],
-			#[RAT, 30]
+			[BEEFYSOLDIER, 1],
+			[SOLDIER, 4],
+			[BEEFYSOLDIER, 1],
+			[SOLDIER, 4],
+			[SOLDIER, 4],
+			[RAT, 30]
 		],
 		2 : [
-			[SOLDIER, 1],
-			#[BEEFYSOLDIER, 8],
-			#[TANK, 2]
+			[TANK, 8],
+			[SOLDIER, 4],
+			[BEEFYSOLDIER, 4],
+			[SOLDIER, 8],
+			[BEEFYSOLDIER, 4],
+			[SOLDIER, 4],
+			[SOLDIER, 4],
+			[RAT, 30]
 		],
 		3 : [
-			[SOLDIER, 32],
-			[BEEFYSOLDIER, 16],
-			[TANK, 4]
+			[TANK, 16],
+			[SOLDIER, 64],
+			[BEEFYSOLDIER, 32],
+			[RAT, 150]
 		]
 	}

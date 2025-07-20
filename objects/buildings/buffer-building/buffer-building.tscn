@@ -39,8 +39,8 @@ animations = [{
 [node name="Buffer-building" type="Node2D"]
 script = ExtResource("1_i4i7x")
 fireRate = 0.0
-idleEnergyConsumption = 30
-activeEnergyConsumption = 30
+idleEnergyConsumption = 7
+activeEnergyConsumption = 7
 damage = 0
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 

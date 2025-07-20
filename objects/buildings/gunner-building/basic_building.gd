@@ -7,20 +7,20 @@ signal statsChanged(damage, fireRate, attackRange, idleEnergyConsumption, active
 @onready var gun: Node2D = $Gun
 @onready var attackRange: Area2D = $AttackRange
 @export var fireRate: float = 1.0
-@export var idleEnergyConsumption: int = 10
-@export var activeEnergyConsumption: int = 40
+@export var idleEnergyConsumption: int = 2
+@export var activeEnergyConsumption: int = 10
 @export var damage: int = 5
 
 var upgradeOneText = "+5 DMG, +2 idle/+5 active"
 var upgradeOneIncrease = 5 # dmg increase
-var upgradeOneIdleIncrease = 2
-var upgradeOneActiveIncrease = 5
+var upgradeOneIdleIncrease = 0.5
+var upgradeOneActiveIncrease = 2
 var upgradeOneLevel = 0
 
 var upgradeTwoText = "+1 ROF, +2 idle/+5 active"
 var upgradeTwoIncrease = 1 # fire rate
-var upgradeTwoIdleIncrease = 2
-var upgradeTwoActiveIncrease = 5
+var upgradeTwoIdleIncrease = 0.5
+var upgradeTwoActiveIncrease = 2
 var upgradeTwoLevel = 0
 
 # I will shoot
