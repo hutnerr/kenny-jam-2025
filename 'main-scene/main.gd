@@ -26,7 +26,6 @@ func onButtonPressed(buttonName):
 	waveManager.waves = load(waveScript).new().waves
 	waveManager.finalWave = len(waveManager.waves)
 
-	
 	# begin the game
 	var levelScene = levelPackedScene.instantiate()
 	levelContainer.add_child(levelScene)

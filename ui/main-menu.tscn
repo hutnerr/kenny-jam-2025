@@ -2,6 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://bmk4ivp48q8t8" path="res://ui/shaders/lightning.gdshader" id="1_epn3a"]
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_ws6as"]
+[ext_resource type="StyleBox" uid="uid://c6sdd3uq712w5" path="res://ui/styles/button-hover.tres" id="3_lpta4"]
+[ext_resource type="StyleBox" uid="uid://bpte2njrqshif" path="res://ui/styles/button.tres" id="4_tmj1g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrhvg"]
 shader = ExtResource("1_epn3a")
@@ -14,16 +16,6 @@ shader_parameter/pixelation = 16.0
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
 corner_radius_top_left = 32
 corner_radius_bottom_right = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epn3a"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-corner_radius_top_left = 16
-corner_radius_bottom_right = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrhvg"]
-bg_color = Color(0.156863, 0.156863, 0.156863, 1)
-corner_radius_top_left = 16
-corner_radius_bottom_right = 16
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpta4"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -75,7 +67,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_ws6as")
 theme_override_font_sizes/font_size = 32
-text = "SolarCharged"
+text = "Solar Charged"
 
 [node name="Level1Button" type="Button" parent="." groups=["levelbutton"]]
 process_mode = 3
@@ -88,7 +80,9 @@ offset_right = 151.0
 offset_bottom = -67.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_ws6as")
-theme_override_styles/normal = SubResource("StyleBoxFlat_epn3a")
+theme_override_styles/hover = ExtResource("3_lpta4")
+theme_override_styles/normal = ExtResource("4_tmj1g")
+action_mode = 0
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="." groups=["levelbutton"]]
@@ -105,7 +99,18 @@ offset_bottom = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_ws6as")
-theme_override_styles/normal = SubResource("StyleBoxFlat_wrhvg")
+theme_override_styles/focus = ExtResource("4_tmj1g")
+theme_override_styles/disabled_mirrored = ExtResource("4_tmj1g")
+theme_override_styles/disabled = ExtResource("4_tmj1g")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_tmj1g")
+theme_override_styles/hover_pressed = ExtResource("3_lpta4")
+theme_override_styles/hover_mirrored = ExtResource("3_lpta4")
+theme_override_styles/hover = ExtResource("3_lpta4")
+theme_override_styles/pressed_mirrored = ExtResource("4_tmj1g")
+theme_override_styles/pressed = ExtResource("4_tmj1g")
+theme_override_styles/normal_mirrored = ExtResource("4_tmj1g")
+theme_override_styles/normal = ExtResource("4_tmj1g")
+action_mode = 0
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="." groups=["levelbutton"]]
@@ -122,5 +127,8 @@ offset_bottom = -67.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_ws6as")
+theme_override_styles/hover = ExtResource("3_lpta4")
+theme_override_styles/pressed = ExtResource("4_tmj1g")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lpta4")
+action_mode = 0
 text = "Level 3"

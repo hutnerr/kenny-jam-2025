@@ -3,6 +3,7 @@ extends State
 func enter():
 	print("In main menu state")
 	super()
+	parent.energyManager.get_child(2).visible = false
 	parent.mainMenu.visible = true
 	get_tree().paused = false
 	parent.energyManager.letTheHolySunRestoreThyEnergyLowlyScum()
@@ -23,6 +24,7 @@ func exit():
 	super()
 	parent.energyManager.energy.imDead = false
 	parent.energyManager.letTheHolySunRestoreThyEnergyLowlyScum()
+	parent.energyManager.get_child(2).visible = true
 	parent.waveManager.currentWave = 0
 	parent.waveManager.enemiesSlain = 0
 	parent.mainMenu.visible = false

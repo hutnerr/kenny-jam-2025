@@ -14,3 +14,5 @@ max_health = 1000.0
 autostart = true
 
 [node name="EnergyBar" parent="." instance=ExtResource("3_gvhk4")]
+layer = 1
+visible = false
