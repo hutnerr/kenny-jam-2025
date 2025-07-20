@@ -10,6 +10,7 @@ var energyBarText: Label
 var consumingEnergy: bool = false
 var energyConsumers: Array[Node]
 
+
 func _ready() -> void:
 	timer.timeout.connect(onTimerTimeout)
 	energy.health_changed.connect(updateProgressBar)
