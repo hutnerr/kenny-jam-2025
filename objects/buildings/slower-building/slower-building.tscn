@@ -59,6 +59,8 @@ shape = SubResource("CircleShape2D_rsfnq")
 z_index = 1
 texture = ExtResource("3_caxp2")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_iugea")
 autoplay = "default"

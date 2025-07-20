@@ -53,6 +53,8 @@ shape = SubResource("CircleShape2D_itxsi")
 visible = false
 texture = ExtResource("2_k6n2b")
 
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -6)
 sprite_frames = SubResource("SpriteFrames_wos0c")
