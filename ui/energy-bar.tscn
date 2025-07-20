@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvkdcedv7rv3m"]
+
+[ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_l85gm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s154k"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phboc"]
+bg_color = Color(0.372549, 0.627451, 0.831373, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_l85gm"]
+font = ExtResource("1_l85gm")
+font_size = 8
+
+[node name="EnergyBar" type="CanvasLayer"]
+layer = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 5
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_s154k")
+theme_override_styles/fill = SubResource("StyleBoxFlat_phboc")
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5000/10000"
+label_settings = SubResource("LabelSettings_l85gm")
+horizontal_alignment = 1
+vertical_alignment = 1

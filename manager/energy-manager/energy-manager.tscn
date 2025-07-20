@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://be53i0nrnk7ms"]
+[gd_scene load_steps=4 format=3 uid="uid://be53i0nrnk7ms"]
 
 [ext_resource type="PackedScene" uid="uid://c3caec7vlxxv8" path="res://components/health-component/health_component.tscn" id="1_o5txe"]
 [ext_resource type="Script" uid="uid://b1xkemv44gjqe" path="res://manager/energy-manager/energy_manager.gd" id="1_psoy3"]
+[ext_resource type="PackedScene" uid="uid://bvkdcedv7rv3m" path="res://ui/energy-bar.tscn" id="3_gvhk4"]
 
 [node name="EnergyManager" type="Node"]
 script = ExtResource("1_psoy3")
@@ -11,3 +12,5 @@ max_health = 100000.0
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
+
+[node name="EnergyBar" parent="." instance=ExtResource("3_gvhk4")]
