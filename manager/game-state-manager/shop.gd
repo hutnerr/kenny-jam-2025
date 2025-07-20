@@ -2,6 +2,7 @@ extends State
 
 #Wait for some sort of button to be pressed by the player before continuing
 func enter():
+	print("In shop state")
 	super()
 	parent.shopMenu.visible = true
 

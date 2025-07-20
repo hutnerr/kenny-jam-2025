@@ -4,18 +4,15 @@ var currentBuilding: PackedScene
 var buildingScene: Node2D
 
 func enter():
-	print(currentBuilding)
+	print("In placing state")
 	if currentBuilding:
 		self.buildingScene = currentBuilding.instantiate()
 		self.buildingScene.z_index += 2
 		add_child(buildingScene)
-		self.buildingScene.add_to_group("building")
-		print("made this mf")
-	print("we in this bitch")
 
 func exit():
 	self.currentBuilding = null
-	print("we out this bitch")
+
 
 func update(_delta):
 	super(_delta)

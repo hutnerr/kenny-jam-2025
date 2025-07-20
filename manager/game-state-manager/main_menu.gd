@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	print("In main menu state")
 	super()
 	parent.mainMenu.visible = true
 	get_tree().paused = false

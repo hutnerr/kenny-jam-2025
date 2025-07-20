@@ -23,7 +23,7 @@ func onButtonPressed(buttonName):
 	var waveScript = waveFormat.replace("PLCH", levelName)
 	waveManager.waves = load(waveScript).new().waves
 	waveManager.finalWave = len(waveManager.waves)
-	print(waveManager.finalWave)
+
 	
 	# begin the game
 	var levelScene = levelPackedScene.instantiate()

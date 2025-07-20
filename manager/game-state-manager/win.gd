@@ -1,6 +1,7 @@
 extends State
 
 func enter():
+	print("In win state")
 	get_tree().paused = true
 	parent.winScreen.visible = true
 	parent.weatherLayer.visible = false

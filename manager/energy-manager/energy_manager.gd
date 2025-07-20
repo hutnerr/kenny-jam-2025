@@ -37,7 +37,6 @@ func sumUpkeepCost():
 	getEnergyConsumers()
 	var total = passiveEnergyLoss
 	for building: BaseBuilding in energyConsumers:
-		print(building.stateMachine.current_state.name, building.activeEnergyConsumption, building.idleEnergyConsumption)
 		
 		match building.stateMachine.current_state.name:
 			"Idle":
@@ -56,4 +55,3 @@ func updateProgressBar():
 func onTimerTimeout():
 	if consumingEnergy:
 		energy.damage(sumUpkeepCost())
-		print(energy.current_health)

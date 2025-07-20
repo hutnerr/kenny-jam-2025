@@ -5,7 +5,7 @@ func enter():
 	super()
 	parent.weatherLayer.updateWeatherShader("night")
 	parent.energyManager.consumingEnergy = true
-	print("I'm now in the combat state")		
+	print("I'm now in the combat state")
 	parent.waveManager.currentWave += 1
 	parent.waveManager.beginWave()
 

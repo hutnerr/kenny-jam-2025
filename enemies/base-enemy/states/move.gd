@@ -8,7 +8,6 @@ func enter():
 func update(delta):
 	var followpath: PathFollow2D = get_parent().get_parent().get_parent()
 	if not followpath:
-		print("sad :(")
 		return
 	
 	var progress = followpath.get_progress()

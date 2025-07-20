@@ -14,5 +14,4 @@ func updateWeatherShader(name: String):
 		"night":
 			ind = 3
 	
-	print("changing to ", ind)
 	$ColorRect.material.set_shader_parameter("weather_type", ind)

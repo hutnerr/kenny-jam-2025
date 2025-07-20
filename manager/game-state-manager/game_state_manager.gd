@@ -24,8 +24,6 @@ func _ready() -> void:
 		shopItem.get_child(0).pressed.connect(onShopBuildingPlacingButton.bind(shopItem.building))
 	
 func onShopBuildingPlacingButton(currentBuilding) -> void:
-	print("THIS SHIT WENT OFF")
-	print(currentBuilding)
 	$StateMachine/Placing.currentBuilding = currentBuilding
 
 func onWaveEnded() -> void:
