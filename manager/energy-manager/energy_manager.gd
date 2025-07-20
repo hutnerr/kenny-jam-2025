@@ -22,11 +22,11 @@ func _ready() -> void:
 	
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
-	healByPercent(200)
+	healByPercent(1)
 
 func healByPercent(percent: float):
 	print("healed by ", percent * 100, "%")
-	var amount_to_heal = energy.current_health * percent
+	var amount_to_heal = energy.max_health * percent
 	energy.heal(amount_to_heal)
 
 func getEnergyConsumers():

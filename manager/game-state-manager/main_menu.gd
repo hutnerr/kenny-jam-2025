@@ -6,6 +6,7 @@ func enter():
 	parent.mainMenu.visible = true
 	get_tree().paused = false
 	parent.energyManager.letTheHolySunRestoreThyEnergyLowlyScum()
+	parent.enemySpawnManager.clearEnemies()
 	
 	var buildings = get_tree().get_nodes_in_group("building")
 	for building in buildings:
