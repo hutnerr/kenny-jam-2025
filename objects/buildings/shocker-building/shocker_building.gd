@@ -2,9 +2,15 @@ extends BaseBuilding
 
 @onready var timer: Timer = $Timer
 
+
 func _ready() -> void:
+	timer.wait_time = fireRate
+	print(timer.wait_time)
+	print(self.fireRate)
+	print(1.0 / self.fireRate)
+	timer.wait_time = 1.0 / self.fireRate
 	add_to_group("building")
 	stateMachine.custom_init(self)
-	print(attackRange)
 	timer.timeout.connect($StateMachine/Active.onTimerTimeout)
-	timer.wait_time = fireRate
+	# This is only here to fix dependency issue. Gun is not used for this building
+	gun.damage = self.damage

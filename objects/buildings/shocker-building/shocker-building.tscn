@@ -1,18 +1,50 @@
-[gd_scene load_steps=8 format=3 uid="uid://w2doqccokfwg"]
+[gd_scene load_steps=14 format=3 uid="uid://w2doqccokfwg"]
 
 [ext_resource type="Script" uid="uid://iwt55j430xfo" path="res://objects/buildings/shocker-building/shocker_building.gd" id="1_57wq1"]
 [ext_resource type="Texture2D" uid="uid://c86ofxvsnulef" path="res://sprites/Tiles/tile_0044.png" id="2_4rp8b"]
+[ext_resource type="Texture2D" uid="uid://sgwby2qbuje5" path="res://resources/shocker-shocking-sprite.png" id="3_57wq1"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="3_ke70k"]
 [ext_resource type="Script" uid="uid://b34cdnu5o2ooi" path="res://components/state-machine/state.gd" id="4_57wq1"]
 [ext_resource type="Script" uid="uid://lq132g16ujwc" path="res://objects/buildings/shocker-building/active.gd" id="5_jaawr"]
+[ext_resource type="PackedScene" uid="uid://dug38b46sg2ce" path="res://components/projectile_component/projectil_manager.tscn" id="7_jaawr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaawr"]
 radius = 23.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaawr"]
+atlas = ExtResource("3_57wq1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxwc8"]
+atlas = ExtResource("3_57wq1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8etrn"]
+atlas = ExtResource("3_57wq1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdstu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaawr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxwc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8etrn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxwc8"]
 
 [node name="ShockerBuilding" type="Node2D"]
 script = ExtResource("1_57wq1")
+fireRate = 10.0
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 
 [node name="AttackRange" type="Area2D" parent="."]
@@ -22,6 +54,11 @@ shape = SubResource("CircleShape2D_jaawr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4rp8b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tdstu")
+autoplay = "default"
+frame_progress = 0.0809743
 
 [node name="MahBody" type="Area2D" parent="."]
 
@@ -43,3 +80,5 @@ metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_57wq1")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Gun" parent="." instance=ExtResource("7_jaawr")]
