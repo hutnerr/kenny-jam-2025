@@ -11,9 +11,9 @@ func enter():
 
 func exit():
 	super()
-	parent.weatherManager.updateWeatherEffect()
-	parent.weatherLayer.updateWeatherShader(parent.weatherManager.currentWeather)
+	parent.weatherLayer.updateWeatherShader(parent.weatherManager.tomorrowWeather)
 	parent.enemySpawnManager.clearEnemies()
 	parent.energyManager.consumingEnergy = false
 	if not parent.energyManager.energy.imDead:
-		parent.energyManager.healByPercent(parent.weatherManager.weather[parent.weatherManager.currentWeather])
+		parent.energyManager.healByPercent(parent.weatherManager.weather[parent.weatherManager.tomorrowWeather])
+	parent.weatherManager.updateWeatherEffect()

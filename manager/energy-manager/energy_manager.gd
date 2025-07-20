@@ -50,7 +50,7 @@ func getEnergyPercent():
 
 func updateProgressBar():
 	energyBar.value = energy.get_health_percent()
-	energyBarText.text = str(int(energy.current_health), "/", int(energy.max_health))
+	energyBarText.text = str("POWER: ", int(energy.current_health), "/", int(energy.max_health))
 
 func onTimerTimeout():
 	if consumingEnergy:

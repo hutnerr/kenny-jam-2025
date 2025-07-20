@@ -4,6 +4,8 @@ extends State
 func enter():
 	print("In shop state")
 	super()
+	parent.shopMenu.get_child(2).text = str("TOMORROW'S WEATHER: ", parent.weatherManager.tomorrowWeather)
+	parent.shopMenu.get_child(3).text = str(int(parent.weatherManager.weather[parent.weatherManager.tomorrowWeather] * 100), "% POW REC")
 	parent.shopMenu.visible = true
 
 func exit():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://slvj264h1ry5"]
+[gd_scene load_steps=10 format=3 uid="uid://slvj264h1ry5"]
 
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_foe6g"]
 [ext_resource type="PackedScene" uid="uid://c2c2abf7vi44f" path="res://ui/shop-item.tscn" id="2_2v8nf"]
@@ -19,6 +19,12 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.156863, 0.156863, 0.156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67uj7"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
+expand_margin_left = 6.0
 
 [node name="Shop" type="CanvasLayer"]
 
@@ -79,3 +85,23 @@ offset_top = 276.0
 offset_right = 6.0
 offset_bottom = -2.0
 building = ExtResource("6_67uj7")
+
+[node name="WeatherLabel" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 335.0
+offset_right = 392.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("1_foe6g")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_67uj7")
+text = "Tomorrow's Weather: "
+
+[node name="WeatherPercentLabel" type="Label" parent="."]
+offset_left = 398.0
+offset_top = 335.0
+offset_right = 554.0
+offset_bottom = 355.0
+theme_override_fonts/font = ExtResource("1_foe6g")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_67uj7")
+text = "35% POW REC"

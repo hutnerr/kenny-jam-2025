@@ -10,13 +10,17 @@ var weather = {
 }
 
 var currentWeather = null
+var tomorrowWeather = null
 
 func _ready() -> void:
-	self.currentWeather = updateWeatherEffect()
+	updateWeatherEffect()
 
 func updateWeatherEffect():
 	# randomly gets and returns as a tupple (haha) yes
 	var randomKey = weather.keys()[randi() % weather.size()]
 	self.currentWeather = randomKey
+	
+	randomKey = weather.keys()[randi() % weather.size()]
+	self.tomorrowWeather = randomKey
 	#var weatherEffect = weather[randomKey]
 	#return [randomKey, weatherEffect]
