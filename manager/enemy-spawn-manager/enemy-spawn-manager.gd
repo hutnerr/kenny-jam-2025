@@ -4,17 +4,40 @@ var placeHolder = "res://levels/PLCH/paths"
 var currentLevel: String
 signal enemyKilled
 
+@onready var path1: Array = [
+	preload("res://levels/level1/paths/path_2d_1.tscn"),
+	preload("res://levels/level1/paths/path_2d_2.tscn"),
+	preload("res://levels/level1/paths/path_2d_3.tscn"),
+	preload("res://levels/level1/paths/path_2d_4.tscn")
+]
+@onready var path2: Array = [
+	preload("res://levels/level2/paths/path_2d.tscn"),
+	preload("res://levels/level2/paths/path_2d_2.tscn"),
+	preload("res://levels/level2/paths/path_2d_3.tscn"),
+	preload("res://levels/level2/paths/path_2d_4.tscn"),
+	preload("res://levels/level2/paths/path_2d_5.tscn"),
+	preload("res://levels/level2/paths/path_2d_6.tscn"),
+	preload("res://levels/level2/paths/path_2d_7.tscn"),
+	preload("res://levels/level2/paths/path_2d_8.tscn")
+]
+
+@onready var path3: Array = [
+	preload("res://levels/level3/paths/path_2d.tscn"),
+	preload("res://levels/level3/paths/path_2d_2.tscn")
+]
+
 var paths: Array
 
 
 func onLevelLoaded():
-	var dir := DirAccess.open(placeHolder.replace("PLCH", self.currentLevel))
-	dir.list_dir_begin()
-	for file: String in dir.get_files():
-		var resource := load(dir.get_current_dir() + "/" + file)
-		print(resource)
-		paths.append(resource)
-
+	match self.currentLevel:
+		"level1":
+			self.paths = path1
+		"level2":
+			self.paths = path2
+		"level3":
+			self.paths = path3
+		
 
 func clearEnemies():
 	var enemies = get_tree().get_nodes_in_group("enemy")
