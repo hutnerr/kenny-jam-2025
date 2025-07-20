@@ -5,8 +5,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wrhvg"]
 shader = ExtResource("1_epn3a")
-shader_parameter/stream_speed = 0.5
-shader_parameter/power_level = 0.858
+shader_parameter/stream_speed = 0.1
+shader_parameter/power_level = 0.709
 shader_parameter/data_color = Vector3(1, 0.9, 0.2)
 shader_parameter/pixelation = 16.0
 
@@ -78,6 +78,7 @@ theme_override_font_sizes/font_size = 32
 text = "SolarCharged"
 
 [node name="Level1Button" type="Button" parent="." groups=["levelbutton"]]
+process_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -91,6 +92,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_epn3a")
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="." groups=["levelbutton"]]
+process_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -107,6 +109,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wrhvg")
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="." groups=["levelbutton"]]
+process_mode = 3
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0

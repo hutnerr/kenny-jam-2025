@@ -6,7 +6,7 @@ var direction: float
 var pointAt: Vector2
 
 @export var projectile_speed: int = 500
-@export var projectile_travel_time: int = 5
+@export var projectile_travel_time: float = 5
 @export var isPiercing: bool = false
 
 

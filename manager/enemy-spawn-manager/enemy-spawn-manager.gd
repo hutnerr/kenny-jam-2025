@@ -8,6 +8,11 @@ extends Node
 ]
 signal enemyKilled
 
+func clearEnemies():
+	var enemies = get_tree().get_nodes_in_group("Enemy")
+	for enemy in enemies:
+		enemy.get_parent().get_parent().queue_free()
+
 func onEnemyKilled():
 	enemyKilled.emit()
 

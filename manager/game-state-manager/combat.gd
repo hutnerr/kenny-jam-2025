@@ -10,4 +10,5 @@ func enter():
 
 func exit():
 	super()
+	parent.enemySpawnManager.clearEnemies()
 	parent.energyManager.consumingEnergy = false

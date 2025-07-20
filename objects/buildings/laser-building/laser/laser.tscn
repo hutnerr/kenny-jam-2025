@@ -29,7 +29,7 @@ size = Vector2(29, 2)
 [node name="PlayerProjectile" type="CharacterBody2D"]
 script = ExtResource("1_ra7b6")
 projectile_speed = 1
-projectile_travel_time = 1
+projectile_travel_time = 0.1
 isPiercing = true
 metadata/_custom_type_script = "uid://b36fcvmbqw4vp"
 
@@ -54,5 +54,6 @@ position = Vector2(14.5, 0)
 shape = SubResource("RectangleShape2D_ra7b6")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 autostart = true

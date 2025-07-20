@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dqjley407rf63" path="res://manager/game-state-manager/lose.gd" id="7_1uquq"]
 
 [node name="GameStateManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_0kd1l")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]

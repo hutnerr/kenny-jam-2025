@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc8sraoccdlqj"]
+[gd_scene load_steps=3 format=3 uid="uid://dc8sraoccdlqj"]
 
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_ya36f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ya36f"]
+bg_color = Color(0.156863, 0.156863, 0.156863, 1)
+corner_radius_top_left = 16
+corner_radius_bottom_right = 16
 
 [node name="WinMenu" type="CanvasLayer"]
 
@@ -28,6 +33,7 @@ color = Color(1, 1, 1, 0.14902)
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayAgainButton" type="Button" parent="."]
+process_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -40,5 +46,6 @@ offset_bottom = -57.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_ya36f")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ya36f")
 text = "PLAY AGAIN"
 metadata/_edit_use_anchors_ = true

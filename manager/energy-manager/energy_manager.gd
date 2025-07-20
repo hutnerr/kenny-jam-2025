@@ -8,7 +8,6 @@ var energyConsumers: Array[Node]
 
 func _ready() -> void:
 	timer.timeout.connect(onTimerTimeout)
-	
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
 	energy.current_health = energy.max_health

@@ -27,22 +27,23 @@ visible = false
 [node name="Lose" parent="GUI" instance=ExtResource("5_4teyh")]
 visible = false
 
-[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen", "energyManager") instance=ExtResource("2_pd65j")]
+[node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]
+
+[node name="GameStateManager" parent="." node_paths=PackedStringArray("waveManager", "mainMenu", "shopMenu", "loseScreen", "winScreen", "energyManager", "enemySpawnManager") instance=ExtResource("2_pd65j")]
 waveManager = NodePath("../WaveManager")
 mainMenu = NodePath("../GUI/MainMenu")
 shopMenu = NodePath("../GUI/Shop")
 loseScreen = NodePath("../GUI/Lose")
 winScreen = NodePath("../GUI/WinMenu")
 energyManager = NodePath("../EnergyManager")
+enemySpawnManager = NodePath("../EnemySpawner")
 
-[node name="LevelContainer" type="Node" parent="."]
+[node name="LevelContainer" type="Node" parent="." groups=["level"]]
 
 [node name="EnemySpawner" parent="." instance=ExtResource("1_inkwu")]
 
 [node name="WaveManager" parent="." node_paths=PackedStringArray("enemySpawner") instance=ExtResource("3_lap8g")]
 enemySpawner = NodePath("../EnemySpawner")
-
-[node name="EnergyManager" parent="." groups=["energy-manager"] instance=ExtResource("9_4teyh")]
 
 [node name="BuildingContainer" type="Node" parent="." groups=["building_container"]]
 

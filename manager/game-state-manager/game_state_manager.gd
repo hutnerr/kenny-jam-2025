@@ -7,6 +7,7 @@ extends Node2D
 @export var loseScreen: CanvasLayer
 @export var winScreen: CanvasLayer
 @export var energyManager: Node
+@export var enemySpawnManager: Node
 
 func _ready() -> void:
 	stateMachine.custom_init(self)
@@ -16,7 +17,15 @@ func _ready() -> void:
 	winScreen.get_child(2).pressed.connect(onPlayAgainButtonPressed)
 	loseScreen.get_child(2).pressed.connect(onPlayAgainButtonPressed)
 	energyManager.get_child(0).died.connect(onEnergyDepleted)
+	var shopItems = shopMenu.get_child(1).get_children()
+	for shopItem in shopItems:
+		shopItem.get_child(0).pressed.connect(onShopBuildingPlacingButton.bind(shopItem.building))
 	
+func onShopBuildingPlacingButton(currentBuilding) -> void:
+	print("THIS SHIT WENT OFF")
+	print(currentBuilding)
+	$StateMachine/Placing.currentBuilding = currentBuilding
+
 func onWaveEnded() -> void:
 	stateMachine.change_state(stateMachine.current_state, "shop")
 	

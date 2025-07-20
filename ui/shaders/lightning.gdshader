@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float stream_speed : hint_range(0.5, 5.0) = 2.0;
+uniform float stream_speed : hint_range(0.1, 5.0) = 2.0;
 uniform float power_level : hint_range(0.0, 1.0) = 0.8;
 uniform vec3 data_color = vec3(1.0, 0.9, 0.2);
 uniform float pixelation : hint_range(8.0, 64.0) = 16.0;
