@@ -3,7 +3,6 @@ extends State
 
 
 func enemiesInRange():
-	print(parent)
 	var range: Area2D = parent.attackRange
 	var enemies = []
 	var allAreas = range.get_overlapping_areas()
@@ -23,6 +22,4 @@ func zap():
 
 func onTimerTimeout():
 	zap()
-	print(parent.timer.wait_time)
 	parent.timer.start(parent.timer.wait_time)
-	print("I'm zapping")

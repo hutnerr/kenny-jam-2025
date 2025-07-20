@@ -17,7 +17,7 @@ func onLevelLoaded():
 
 
 func clearEnemies():
-	var enemies = get_tree().get_nodes_in_group("Enemy")
+	var enemies = get_tree().get_nodes_in_group("enemy")
 	for enemy in enemies:
 		enemy.get_parent().get_parent().queue_free()
 
