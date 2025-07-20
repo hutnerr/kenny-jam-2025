@@ -14,14 +14,14 @@ signal statsChanged(damage, fireRate, attackRange, idleEnergyConsumption, active
 
 var upgradeOneText = "+5 DMG, +2 idle/+5 active"
 var upgradeOneIncrease = 5 # dmg increase
-var upgradeOneIdleIncrease = 0.5
-var upgradeOneActiveIncrease = 2
+var upgradeOneIdleIncrease = 2
+var upgradeOneActiveIncrease = 5
 var upgradeOneLevel = 0
 
 var upgradeTwoText = "+1 ROF, +2 idle/+5 active"
 var upgradeTwoIncrease = 1 # fire rate
-var upgradeTwoIdleIncrease = 0.5
-var upgradeTwoActiveIncrease = 2
+var upgradeTwoIdleIncrease = 2
+var upgradeTwoActiveIncrease = 5
 var upgradeTwoLevel = 0
 
 # I will shoot

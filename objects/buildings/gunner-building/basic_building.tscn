@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bwjrjk7hgjjlv" path="res://audio/error_006.ogg" id="11_f5wxs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ynnmv"]
-radius = 198.04
+radius = 155.052
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ik3pl"]
 
@@ -21,7 +21,7 @@ radius = 198.04
 script = ExtResource("1_m85gk")
 fireRate = 5.0
 idleEnergyConsumption = 4
-activeEnergyConsumption = 6
+activeEnergyConsumption = 9
 damage = 8
 
 [node name="AttackRange" type="Area2D" parent="."]

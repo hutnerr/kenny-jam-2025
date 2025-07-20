@@ -1,6 +1,6 @@
 extends BaseBuilding
 
-@export var buffPercent: float = 20.0
+@export var buffPercent: float = 50.0
 @onready var buffArea = $BuffArea as Area2D
 
 func _ready() -> void:
