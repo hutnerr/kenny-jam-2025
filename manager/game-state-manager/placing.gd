@@ -63,7 +63,6 @@ func showRangeIndicator(position: Vector2, radius: float):
 	
 	get_tree().current_scene.add_child(currentIndicator)
 
-
 func hideRangeIndicator():
 	if currentIndicator:
 		currentIndicator.queue_free()
@@ -100,17 +99,18 @@ func checkTile():
 			print("No tile at position: ", tile_coords)
 	print("We can place it!!")
 	return true
-func placeTower():
 	
+func placeTower():
 	if checkTile():
 		buildingPlaceSound.play()
+		var upgradePanel = get_parent().get_parent().get_parent().get_child(0).get_child(1).get_child(4)
+		upgradePanel.setActiveItem(self.buildingScene)
 		transitioned.emit(self, "shop")
 		#change state
 	else:
 		error.play()
 	
 func escTower():
-	
 	self.buildingScene.queue_free()
 	transitioned.emit(self, "shop")
 	#change state

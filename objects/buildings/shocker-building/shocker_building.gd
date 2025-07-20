@@ -14,3 +14,4 @@ func _ready() -> void:
 	timer.timeout.connect($StateMachine/Active.onTimerTimeout)
 	# This is only here to fix dependency issue. Gun is not used for this building
 	gun.damage = self.damage
+	$MahBody.input_event.connect(onInputEvent)

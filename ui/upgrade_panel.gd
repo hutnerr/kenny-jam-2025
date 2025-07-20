@@ -15,6 +15,7 @@ func setActiveItem(activeItem):
 	activeItem.statsChanged.connect(onStatsChanged)
 	$UpgradeOneButton.text = activeItem.upgradeOneText
 	$UpgradeTwoButton.text = activeItem.upgradeTwoText
+	self.visible = true
 	
 func closeThis():
 	visible = false

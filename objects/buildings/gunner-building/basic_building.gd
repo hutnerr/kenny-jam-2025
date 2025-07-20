@@ -11,17 +11,17 @@ signal statsChanged(damage, fireRate, attackRange, idleEnergyConsumption, active
 @export var activeEnergyConsumption: int = 40
 @export var damage: int = 5
 
-const upgradeOneText = "+5 DMG, +2 idle/+5 active"
-const upgradeOneIncrease = 5 # dmg increase
-const upgradeOneIdleIncrease = 2
-const upgradeOneActiveIncrease = 5
-var upgradeOneLevel = 1
+var upgradeOneText = "+5 DMG, +2 idle/+5 active"
+var upgradeOneIncrease = 5 # dmg increase
+var upgradeOneIdleIncrease = 2
+var upgradeOneActiveIncrease = 5
+var upgradeOneLevel = 0
 
-const upgradeTwoText = "+1 ROF, +2 idle/+5 active"
-const upgradeTwoIncrease = 1 # fire rate
-const upgradeTwoIdleIncrease = 2
-const upgradeTwoActiveIncrease = 5
-var upgradeTwoLevel = 1
+var upgradeTwoText = "+1 ROF, +2 idle/+5 active"
+var upgradeTwoIncrease = 1 # fire rate
+var upgradeTwoIdleIncrease = 2
+var upgradeTwoActiveIncrease = 5
+var upgradeTwoLevel = 0
 
 # I will shoot
 func _ready() -> void:
@@ -38,7 +38,7 @@ func onInputEvent(viewport, event, shpidx):
 			var upgradePanel = shop.get_child(4)
 			upgradePanel.setActiveItem(self)
 			upgradePanel.visible = true
-			
+
 func upgradeOne():
 	if upgradeOneLevel == 3:
 		return
