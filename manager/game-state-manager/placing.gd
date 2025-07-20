@@ -1,10 +1,15 @@
 extends State
 
+@onready var buttonSound: AudioStreamPlayer = $ButtonPressed
+@onready var buildingPlaceSound: AudioStreamPlayer = $BuildingPlaced
+
+
 var currentBuilding: PackedScene
 var buildingScene: Node2D
 var currentIndicator = null # the circle that shows hit range
 
 func enter():
+	buttonSound.play()
 	print("In placing state")
 	if currentBuilding:
 		self.buildingScene = currentBuilding.instantiate()
@@ -65,10 +70,12 @@ func hideRangeIndicator():
 		currentIndicator = null
 
 func placeTower():
+	buildingPlaceSound.play()
 	transitioned.emit(self, "shop")
 	#change state
 	
 func escTower():
+	
 	self.buildingScene.queue_free()
 	transitioned.emit(self, "shop")
 	#change state

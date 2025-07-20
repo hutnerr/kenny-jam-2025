@@ -11,6 +11,8 @@ var consumingEnergy: bool = false
 var energyConsumers: Array[Node]
 
 
+
+
 func _ready() -> void:
 	timer.timeout.connect(onTimerTimeout)
 	energy.health_changed.connect(updateProgressBar)
@@ -20,6 +22,9 @@ func _ready() -> void:
 	
 	updateProgressBar()
 	
+
+func playImpact():
+	$Impact.play()
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
 	healByPercent(1)

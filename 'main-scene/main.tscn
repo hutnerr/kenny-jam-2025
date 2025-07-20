@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ffvvdf46tio1"]
+[gd_scene load_steps=14 format=3 uid="uid://ffvvdf46tio1"]
 
 [ext_resource type="PackedScene" uid="uid://5d8gvyneduo6" path="res://manager/enemy-spawn-manager/enemy-spawn-manager.tscn" id="1_inkwu"]
 [ext_resource type="Script" uid="uid://cc0o4eb2ka7e4" path="res://'main-scene/main.gd" id="1_lap8g"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://be53i0nrnk7ms" path="res://manager/energy-manager/energy-manager.tscn" id="9_4teyh"]
 [ext_resource type="PackedScene" uid="uid://ceh0taawdy8xj" path="res://manager/weather-manager/WeatherManager.tscn" id="10_ipp4m"]
 [ext_resource type="AudioStream" uid="uid://dqkiyi73ghnux" path="res://resources/kenny2025final.wav" id="12_b6e6u"]
+[ext_resource type="AudioStream" uid="uid://y5y02467j584" path="res://audio/click_001.ogg" id="13_0hjr7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_lap8g")
@@ -57,7 +58,11 @@ enemySpawner = NodePath("../EnemySpawner")
 
 [node name="WeatherManager" parent="." instance=ExtResource("10_ipp4m")]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("12_b6e6u")
+autoplay = true
+
+[node name="UISounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_0hjr7")
 autoplay = true
