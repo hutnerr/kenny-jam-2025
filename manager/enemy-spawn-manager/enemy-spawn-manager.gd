@@ -1,12 +1,20 @@
 extends Node
 
-@onready var paths = [
-	preload("res://levels/level1/paths/path_2d_1.tscn"),
-	preload("res://levels/level1/paths/path_2d_2.tscn"),
-	preload("res://levels/level1/paths/path_2d_3.tscn"),
-	preload("res://levels/level1/paths/path_2d_4.tscn")
-]
+var placeHolder = "res://levels/PLCH/paths"
+var currentLevel: String
 signal enemyKilled
+
+var paths: Array
+
+
+func onLevelLoaded():
+	var dir := DirAccess.open(placeHolder.replace("PLCH", self.currentLevel))
+	dir.list_dir_begin()
+	for file: String in dir.get_files():
+		var resource := load(dir.get_current_dir() + "/" + file)
+		print(resource)
+		paths.append(resource)
+
 
 func clearEnemies():
 	var enemies = get_tree().get_nodes_in_group("Enemy")

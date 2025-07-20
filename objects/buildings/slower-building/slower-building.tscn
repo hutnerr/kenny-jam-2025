@@ -1,14 +1,43 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxla5jj8tm2pq"]
+[gd_scene load_steps=12 format=3 uid="uid://bxla5jj8tm2pq"]
 
 [ext_resource type="Script" uid="uid://d2mr6flmqlydy" path="res://objects/buildings/slower-building/slower_building.gd" id="1_wue0j"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="2_8jmxi"]
-[ext_resource type="Texture2D" uid="uid://ce35qncesdde1" path="res://sprites/Tiles/icy-icing-sprite.png" id="2_n47fb"]
 [ext_resource type="Texture2D" uid="uid://c4g48awsxsxlj" path="res://sprites/Tiles/tile_0047.png" id="3_caxp2"]
 [ext_resource type="Script" uid="uid://bgq8awm01uil5" path="res://objects/buildings/slower-building/active.gd" id="3_n47fb"]
+[ext_resource type="Texture2D" uid="uid://m6blrubskw6j" path="res://resources/icy-ice.png" id="3_rsfnq"]
 [ext_resource type="Script" uid="uid://b34cdnu5o2ooi" path="res://components/state-machine/state.gd" id="4_caxp2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rsfnq"]
 radius = 42.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxsgh"]
+atlas = ExtResource("3_rsfnq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fp4al"]
+atlas = ExtResource("3_rsfnq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7pw5"]
+atlas = ExtResource("3_rsfnq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iugea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxsgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fp4al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7pw5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="SlowerBuilding" type="Node2D"]
 script = ExtResource("1_wue0j")
@@ -26,9 +55,9 @@ shape = SubResource("CircleShape2D_rsfnq")
 z_index = 1
 texture = ExtResource("3_caxp2")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(2.3125, 2)
-texture = ExtResource("2_n47fb")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iugea")
+autoplay = "default"
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_8jmxi")

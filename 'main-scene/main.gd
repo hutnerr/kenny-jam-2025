@@ -13,7 +13,9 @@ func _ready() -> void:
 	$AudioStreamPlayer2D.finished.connect(onAudioFinished)
 
 func onButtonPressed(buttonName):
-	var levelName = buttonName.replace("Button", "").to_lower()	
+	var levelName = buttonName.replace("Button", "").to_lower()
+	$EnemySpawner.currentLevel = levelName
+	$EnemySpawner.onLevelLoaded()
 	var levelPath = levelFormat.replace("PLCH", buttonName.replace("Button", "").to_lower())
 	var levelPackedScene = load(levelPath) as PackedScene
 	

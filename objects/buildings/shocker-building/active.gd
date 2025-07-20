@@ -19,8 +19,10 @@ func zap():
 	if !enemies:
 		return
 	for enemy in enemies:
-		enemy.get_child(0).damage(parent.damage)
+		enemy.get_child(0).damage(parent.gun.damage)
 
 func onTimerTimeout():
 	zap()
+	print(parent.timer.wait_time)
+	parent.timer.start(parent.timer.wait_time)
 	print("I'm zapping")
