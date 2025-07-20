@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://cq7ergyalx0ji" path="res://resources/Kenney Rocket Square.ttf" id="1_foe6g"]
 [ext_resource type="PackedScene" uid="uid://c2c2abf7vi44f" path="res://ui/shop-item.tscn" id="2_2v8nf"]
+[ext_resource type="PackedScene" uid="uid://da17ee1bfgyhc" path="res://objects/buildings/laser-building/laser-building.tscn" id="3_1slnd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_foe6g"]
 bg_color = Color(0.156863, 0.156863, 0.156863, 1)
@@ -15,9 +16,6 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0.156863, 0.156863, 0.156863, 1)
-
-[sub_resource type="Resource" id="Resource_2v8nf"]
-metadata/__load_path__ = "res://objects/buildings/basic-building/basic_building.tscn"
 
 [node name="Shop" type="CanvasLayer"]
 
@@ -46,4 +44,11 @@ offset_left = 2.0
 offset_top = 13.0
 offset_right = -83.0
 offset_bottom = -283.0
-building = SubResource("Resource_2v8nf")
+
+[node name="Shop-item2" parent="ShopItems" instance=ExtResource("2_2v8nf")]
+layout_mode = 1
+offset_left = 3.0
+offset_top = 102.0
+offset_right = 3.0
+offset_bottom = 102.0
+building = ExtResource("3_1slnd")

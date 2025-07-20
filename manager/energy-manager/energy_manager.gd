@@ -22,9 +22,9 @@ func _ready() -> void:
 	
 
 func letTheHolySunRestoreThyEnergyLowlyScum():
-	energy.current_health = energy.max_health
+	healByPercent(200)
 
-func healByWeather(percent: float):
+func healByPercent(percent: float):
 	print("healed by ", percent * 100, "%")
 	var amount_to_heal = energy.current_health * percent
 	energy.heal(amount_to_heal)
