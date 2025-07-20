@@ -8,7 +8,7 @@ func enter():
 	if currentBuilding:
 		self.buildingScene = currentBuilding.instantiate()
 		self.buildingScene.z_index += 2
-		add_child(buildingScene)
+		get_tree().get_first_node_in_group("building_container").add_child(buildingScene)
 
 func exit():
 	self.currentBuilding = null
