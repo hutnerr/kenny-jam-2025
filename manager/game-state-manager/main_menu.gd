@@ -21,6 +21,7 @@ func enter():
 func exit():
 	super()
 	parent.energyManager.energy.imDead = false
+	parent.energyManager.letTheHolySunRestoreThyEnergyLowlyScum()
 	parent.waveManager.currentWave = 0
 	parent.waveManager.enemiesSlain = 0
 	parent.mainMenu.visible = false

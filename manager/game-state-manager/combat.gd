@@ -15,4 +15,5 @@ func exit():
 	parent.weatherLayer.updateWeatherShader(parent.weatherManager.currentWeather)
 	parent.enemySpawnManager.clearEnemies()
 	parent.energyManager.consumingEnergy = false
-	parent.energyManager.healByPercent(parent.weatherManager.weather[parent.weatherManager.currentWeather])
+	if not parent.energyManager.energy.imDead:
+		parent.energyManager.healByPercent(parent.weatherManager.weather[parent.weatherManager.currentWeather])
