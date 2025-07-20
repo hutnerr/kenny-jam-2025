@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://w2doqccokfwg"]
 
-[ext_resource type="Script" uid="uid://wqygm3xx8yiw" path="res://objects/buildings/gunner-building/basic_building.gd" id="1_hcurx"]
+[ext_resource type="Script" uid="uid://iwt55j430xfo" path="res://objects/buildings/shocker-building/shocker_building.gd" id="1_57wq1"]
 [ext_resource type="Texture2D" uid="uid://c86ofxvsnulef" path="res://sprites/Tiles/tile_0044.png" id="2_4rp8b"]
-[ext_resource type="Texture2D" uid="uid://cjuc4dkhrd0i7" path="res://sprites/Tiles/shocker-shocking-sprite.png" id="2_ke70k"]
 [ext_resource type="Script" uid="uid://1sg4yj5iuxdd" path="res://components/state-machine/state_machine.gd" id="3_ke70k"]
 [ext_resource type="Script" uid="uid://b34cdnu5o2ooi" path="res://components/state-machine/state.gd" id="4_57wq1"]
+[ext_resource type="Script" uid="uid://lq132g16ujwc" path="res://objects/buildings/shocker-building/active.gd" id="5_jaawr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaawr"]
 radius = 23.0
@@ -12,29 +12,34 @@ radius = 23.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_wxwc8"]
 
 [node name="ShockerBuilding" type="Node2D"]
-script = ExtResource("1_hcurx")
+script = ExtResource("1_57wq1")
 metadata/_custom_type_script = "uid://wqygm3xx8yiw"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-texture = ExtResource("2_ke70k")
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+shape = SubResource("CircleShape2D_jaawr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4rp8b")
-
-[node name="ZapRange" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ZapRange"]
-shape = SubResource("CircleShape2D_jaawr")
 
 [node name="MahBody" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MahBody"]
 shape = SubResource("CircleShape2D_wxwc8")
 
-[node name="StateMachine" type="Node" parent="."]
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_ke70k")
+initial_state = NodePath("Active")
 metadata/_custom_type_script = "uid://1sg4yj5iuxdd"
 
 [node name="Active" type="Node" parent="StateMachine"]
+script = ExtResource("5_jaawr")
+metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
+
+[node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_57wq1")
 metadata/_custom_type_script = "uid://b34cdnu5o2ooi"
