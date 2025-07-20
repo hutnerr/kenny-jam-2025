@@ -27,7 +27,7 @@ func exit():
 	parent.energyManager.letTheHolySunRestoreThyEnergyLowlyScum()
 	parent.energyManager.get_child(2).visible = true
 	parent.waveManager.currentWave = 0
-	parent.waveManager.enemiesSpawned = 0
+	parent.waveManager.enemiesSlain = 0
 	parent.mainMenu.visible = false
 	parent.weatherManager.updateWeatherEffect()
 	parent.weatherLayer.updateWeatherShader(parent.weatherManager.currentWeather)

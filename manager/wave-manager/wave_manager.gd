@@ -11,10 +11,10 @@ var waves = null
 var currentWave = 0
 var finalWave = 0
 var enemyCount = 0
-var enemiesSpawned = 0
-var spawningEnded = false
+var enemiesSlain = 0
 
 signal waveStarted
+signal spawningEnded
 signal waveEnded
 signal gameWon
 
@@ -28,13 +28,13 @@ func _ready() -> void:
 	enemySpawner.enemyKilled.connect(onEnemyKilled)
 
 func onEnemyKilled():
-	var enemies = get_tree().get_nodes_in_group("enemy")
-	print(enemies)
-	if !enemies and spawningEnded:
-		print("Spawning is finished, we have no more enemies")
+	enemiesSlain += 1
+	if enemiesSlain == enemyCount: # finished a wave
+		enemiesSlain = 0
 		if currentWave == finalWave: # we won
+			currentWave = 0
 			gameWon.emit()
-		else:
+		else:    
 			waveEnded.emit()
 
 func getTotalEnemiesInWave(wave):
@@ -55,10 +55,8 @@ func beginWave():
 			await get_tree().create_timer(randf_range(spawnDelayMin, spawnDelayMax)).timeout
 			# if we're alive, then spawn enemy
 			if not $"../EnergyManager".energy.imDead:
-				enemiesSpawned += 1
 				enemySpawner.spawnEnemy(enemy)
-				print("Spawning")
 			else:
 				print("we dead so stop spawning")
 				return
-	spawningEnded = true
+	spawningEnded.emit()
